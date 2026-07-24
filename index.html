@@ -150,9 +150,37 @@
   figure.routemap{margin:22px 0}
   figure.routemap img{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:14px}
   figure.routemap figcaption{font-size:13px;color:var(--muted);margin-top:8px;text-align:center}
+  /* ניווט ימים סטיקי */
+  html{scroll-behavior:smooth}
+  .daynav{position:sticky;top:0;z-index:50;background:var(--sea);border-bottom:2px solid var(--gold);box-shadow:0 2px 10px rgba(0,0,0,.18)}
+  .daynav-track{display:flex;gap:6px;overflow-x:auto;padding:8px 10px;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.4) transparent}
+  .daynav-track::-webkit-scrollbar{height:5px}
+  .daynav-track::-webkit-scrollbar-thumb{background:rgba(255,255,255,.35);border-radius:3px}
+  .daychip{flex:0 0 auto;min-width:58px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:6px 9px;border-radius:10px;text-decoration:none;background:rgba(255,255,255,.10);color:#fff;border:1px solid rgba(255,255,255,.20);transition:background .15s}
+  .daychip:hover{background:rgba(255,255,255,.24)}
+  .daychip .dn{font-family:"Frank Ruhl Libre";font-weight:900;font-size:17px;line-height:1}
+  .daychip .dd{font-family:"Assistant";font-weight:600;font-size:11px;line-height:1;white-space:nowrap;opacity:.92}
+  .day-head{scroll-margin-top:72px}
 </style>
 </head>
 <body>
+
+<nav class="daynav" aria-label="ניווט בין ימי הטיול">
+  <div class="daynav-track">
+    <a class="daychip" href="#d6"><span class="dn">6</span><span class="dd">ליסבון</span></a>
+    <a class="daychip" href="#d7"><span class="dn">7</span><span class="dd">ליסבון</span></a>
+    <a class="daychip" href="#d8"><span class="dn">8</span><span class="dd">סינטרה</span></a>
+    <a class="daychip" href="#d9"><span class="dn">9</span><span class="dd">הפלגה</span></a>
+    <a class="daychip" href="#d10"><span class="dn">10</span><span class="dd">פורטימאו</span></a>
+    <a class="daychip" href="#d11"><span class="dn">11</span><span class="dd">קאדיס</span></a>
+    <a class="daychip" href="#d12"><span class="dn">12</span><span class="dd">גרנדה</span></a>
+    <a class="daychip" href="#d13"><span class="dn">13</span><span class="dd">גיברלטר</span></a>
+    <a class="daychip" href="#d14"><span class="dn">14</span><span class="dd">איביזה</span></a>
+    <a class="daychip" href="#d15"><span class="dn">15</span><span class="dd">פלמה</span></a>
+    <a class="daychip" href="#d16"><span class="dn">16</span><span class="dd">ברצלונה</span></a>
+    <a class="daychip" href="#d17"><span class="dn">17</span><span class="dd">טיסה</span></a>
+  </div>
+</nav>
 
 <header class="hero">
   <div class="tiles"></div>
@@ -190,7 +218,8 @@
     <h3>🔴 להזמין עכשיו (נמכר מראש)</h3>
     <ol>
       <li><b>7.8 (ו׳) · ארוחת ליל שבת בליסבון:</b> קהילת CIL (ליד בית הכנסת שערי תקווה) — הרשמה מראש, סגירה בד״כ יום ה׳ 18:00; או חב״ד פורטוגל. חלופה: ערב פאדו.</li>
-      <li><b>12.8 (ד׳) · אלהמברה — ארמונות הנאסריים:</b> חלון כניסה בשעה מדויקת, קבעו סלוט אחר צהריים (~13:00–14:30). אתר רשמי: <a href="https://www.alhambra-patronato.es" target="_blank" rel="noopener">alhambra-patronato.es</a>. כולל מיניבוס פרטי מהנמל.</li>
+      <li><b>12.8 (ד׳) · אלהמברה — כרטיס General €22.27:</b> חלון נאסריים <b>~13:00–14:00</b> (בשעה מדויקת!). אתר רשמי: <a href="https://www.alhambra-patronato.es" target="_blank" rel="noopener">alhambra-patronato.es</a>. אוזל מהר באוגוסט — לקנות מיד.</li>
+      <li><b>12.8 (ד׳) · הסעה פרטית הלוך-חזור מוטריל↔גרנדה:</b> שני טרנספרים (איסוף בנמל ~10:00 · חזרה מגרנדה ~20:00) — Kiwitaxi / monTransport / Daytrip. אין רכבת, ואוטובוס לא מומלץ לחזרה.</li>
       <li><b>13.8 (ה׳) · סיור טקסי בגיברלטר</b> (חצי יום).</li>
       <li><b>16.8 (א׳) · רובע אל קאל + סינגוגה מאיור בברצלונה:</b> אפשר סיור מודרך לרובע היהודי (אופציונלי).</li>
       <li><b>הסעות בברצלונה (ואן/מיניבוס מראש):</b><br>16.8 · מנמל הקרוז בברצלונה למלון<br>17.8 · מהמלון בברצלונה לשדה<br>(בליסבון — Bolt במקום, ללא הזמנה מראש · פירוט במקטע ההסעות)</li>
@@ -227,7 +256,7 @@
   <p class="portlink">מידע על הנמל: <a href="https://www.cleancruising.com.au/port/lisbon" target="_blank" rel="noopener">ליסבון</a> · הכניסה הראשונה לאיחוד → רישום ביומטרי <a href="https://travel-europe.europa.eu/ees" target="_blank" rel="noopener">EES</a>.</p>
 
   <div class="day">
-    <div class="day-head"><div class="badge"><span class="d">6</span><span class="m">אוג׳ · ה׳</span></div>
+    <div class="day-head" id="d6"><div class="badge"><span class="d">6</span><span class="m">אוג׳ · ה׳</span></div>
       <div class="day-title">ערב הגעה<small>נחיתה 20:55</small></div></div>
     <ul>
       <li><span class="time">~21:00–22:00</span> יציאה מהשדה (אחרי EES + מזוודות), <b>Bolt</b> למלון (מזמינים באפליקציה בשדה, ללא הזמנה מראש). מומלץ מלון מרכזי בבאיישה/שיאדו.</li>
@@ -236,7 +265,7 @@
   </div>
 
   <div class="day">
-    <div class="day-head"><div class="badge"><span class="d">7</span><span class="m">אוג׳ · ו׳</span></div>
+    <div class="day-head" id="d7"><div class="badge"><span class="d">7</span><span class="m">אוג׳ · ו׳</span></div>
       <div class="day-title">סיור יום בעיר העתיקה <span class="tag">אוכל</span><small>מודרך · היכרות עם ליסבון</small></div></div>
     <ul>
       <li><span class="time">10:00</span> <b>סיור מודרך בעיר העתיקה (בעברית) — מוזמן ✓</b> · סיור חינמי (מודל טיפ) עם המדריך <b>אמיר כהן</b>. <b>מפגש:</b> מול בית הקפה <a href="https://maps.app.goo.gl/5xZvsU5RBJzA6Zo17" target="_blank" rel="noopener">Graça 77 · Largo da Graça 77</a> (אזור גראסה/אלפמה — מצפורים יפים). להגיע כמה דק׳ לפני.</li>
@@ -252,7 +281,7 @@
   </div>
 
   <div class="day">
-    <div class="day-head"><div class="badge"><span class="d">8</span><span class="m">אוג׳ · ש׳</span></div>
+    <div class="day-head" id="d8"><div class="badge"><span class="d">8</span><span class="m">אוג׳ · ש׳</span></div>
       <div class="day-title">סינטרה — סיור מאורגן <span class="tag">✓ מוזמן</span><span class="tag">טבע</span><small>ODYSSEY Tours · יציאה 08:00 מרוסיו</small></div></div>
     <ul>
       <li><span class="time">~07:00</span> ארוחת בוקר מהירה במלון <b>אם הבופה כבר פתוח</b> (בסופ״ש נפתח מאוחר יותר, ~07:30 — לאמת מול הקבלה). אם עדיין סגור — <b>ארוחת בוקר ארוזה מהקבלה</b> (לבקש יום לפני). יוצאים מהמלון ~07:30.</li>
@@ -271,7 +300,7 @@
   </div>
 
   <div class="day">
-    <div class="day-head"><div class="badge"><span class="d">9</span><span class="m">אוג׳ · א׳</span></div>
+    <div class="day-head" id="d9"><div class="badge"><span class="d">9</span><span class="m">אוג׳ · א׳</span></div>
       <div class="day-title">עלייה לאונייה <span class="tag">יום קצר</span><small>צ׳ק־אין באונייה 12:00–12:30 · הפלגה 18:00</small></div></div>
     <ul>
       <li><span class="time">בוקר</span> <b>בוקר צ׳יל</b> — ארוחת בוקר בכיף ובנחת במלון, בלי לחץ, ואריזה אחרונה.</li>
@@ -288,7 +317,7 @@
   <div class="band"><span class="num">חלק ב׳</span><h2>נמלי הקרוז · 10–15.8</h2></div>
 
   <div class="day">
-    <div class="day-head"><div class="badge"><span class="d">10</span><span class="m">אוג׳ · ב׳</span></div>
+    <div class="day-head" id="d10"><div class="badge"><span class="d">10</span><span class="m">אוג׳ · ב׳</span></div>
       <div class="day-title">פורטימאו — מערות בנאגיל <span class="tag">טבע</span><span class="tag">אקשן</span><small class="warn">נמל טנדר · יורדים ~09:30</small></div></div>
     <ul>
       <li><span class="time">08:00</span> ארוחת בוקר על הסיפון (Garden Café — פתוח מוקדם בימי נמל). לארוז: בגד ים, מגבת, כובע, קרם הגנה ומים.</li>
@@ -306,7 +335,7 @@
   </div>
 
   <div class="day">
-    <div class="day-head"><div class="badge"><span class="d">11</span><span class="m">אוג׳ · ג׳</span></div>
+    <div class="day-head" id="d11"><div class="badge"><span class="d">11</span><span class="m">אוג׳ · ג׳</span></div>
       <div class="day-title">קאדיס — עיר עתיקה ואוכל <span class="tag">אוכל</span><span class="tag">היסטוריה</span><small>יום רגוע · יורדים 10:00</small></div></div>
     <ul>
       <li><span class="time">~08:30</span> ארוחת בוקר על הסיפון בנחת.</li>
@@ -323,10 +352,11 @@
   </div>
 
   <div class="day">
-    <div class="day-head"><div class="badge" style="background:var(--sea)"><span class="d">12</span><span class="m">אוג׳ · ד׳</span></div>
+    <div class="day-head" id="d12"><div class="badge" style="background:var(--sea)"><span class="d">12</span><span class="m">אוג׳ · ד׳</span></div>
       <div class="day-title">גרנדה (ממוטריל) <span class="tag">אלהמברה</span><span class="tag">היסטוריה</span><small>ירידה 10:00 · הפלגה 22:00</small></div></div>
     <ul>
-      <li><b>הסעה:</b> מיניבוס פרטי הלוך-חזור מהנמל (~50–75 דק׳ לכיוון). בגרנדה ~11:15, עד ~20:00 בעיר. <b>לא Bolt</b> — כיסוי דליל במוטריל, וקשה מאוד להשיג נסיעה חזרה בערב. 🚫 <b>אין רכבת למוטריל.</b> אוטובוס ALSA זול ותכוף — אבל <b>לא מומלץ לחזרה</b>: יוצא מתחנת האוטובוס (לא מהנמל), ומסוכן מול הפלגה 22:00.</li>
+      <li><b>הסעה מ/אל מוטריל — טרנספר פרטי בשני הכיוונים:</b> איסוף בנמל ~10:00, ו<b>חזרה מגרנדה ~20:00</b> (חובה!). ~50–75 דק׳ לכיוון. 🚫 <b>אין רכבת</b>, ואוטובוס ALSA לא מומלץ לחזרה (יוצא מתחנה ולא מהנמל, מסוכן מול הפלגה 22:00). לא Bolt — כיסוי דליל במוטריל.</li>
+      <li><b>תנועה בתוך גרנדה — מיניבוסים ייעודיים:</b> <b>C30/C32</b> (אלהמברה↔מרכז) ו-<b>C31/C32</b> (מרכז↔אלבייסין/סן ניקולס), כל ~10–12 דק׳, ~€1.40. גיבוי: 2 טקסי קצרים. <b>לא צריך נהג צמוד</b> — הקווים בנויים בדיוק לזה, ולרכב פרטי אסור להיכנס לסמטאות האלבייסין.</li>
       <li><span class="time">~11:30</span> <b>טיול רגוע במרכז העתיק</b> — הקתדרלה, אלקאיסריה (שוק המשי), ושכונת <b>ריאלחו</b> — הרובע היהודי הישן (גַרנַטַה אל־יַהוד). הכל שטוח וקרוב.</li>
       <li><span class="time">צהריים</span> <b>טפאס</b> (נשנוש, לא ארוחה מסודרת) — בגרנדה כל משקה מגיע עם טפא <b>חינם</b>. המלצה: <b><a href="https://www.google.com/maps/search/?api=1&query=Bodegas%20Casta%C3%B1eda%2C%20Granada" target="_blank" rel="noopener">Bodegas Castañeda</a></b> (מ־1927, ליד הקתדרלה, מנות שיתוף). לצמחונים — לומר בהזמנה; או <a href="https://www.google.com/maps/search/?api=1&query=Hicuri%20Art%20Vegan%2C%20Granada" target="_blank" rel="noopener">Hicuri Art Vegan</a> (ריאלחו, טבעוני).</li>
       <li><span class="time">~13:00</span> <b>אלהמברה</b> — ארמונות הנאסריים + גני גנרליף + אלקסבה. כרטיס <b>General €22.27</b>. <b>⚠️ חלון נאסריים מוקדם (~13:00–14:00)</b> — כדי להספיק למופע ב-17:30.</li>
@@ -343,7 +373,7 @@
   </div>
 
   <div class="day">
-    <div class="day-head"><div class="badge" style="background:var(--alert)"><span class="d">13</span><span class="m">אוג׳ · ה׳</span></div>
+    <div class="day-head" id="d13"><div class="badge" style="background:var(--alert)"><span class="d">13</span><span class="m">אוג׳ · ה׳</span></div>
       <div class="day-title">גיברלטר <span class="tag">אקשן</span><small class="warn">לרדת מוקדם ~07:45 — חצי יום</small></div></div>
     <ul>
       <li><b>רכבל אל הסלע</b> — נוף על מיצר גיברלטר.</li>
@@ -357,7 +387,7 @@
   </div>
 
   <div class="day">
-    <div class="day-head"><div class="badge"><span class="d">14</span><span class="m">אוג׳ · ו׳</span></div>
+    <div class="day-head" id="d14"><div class="badge"><span class="d">14</span><span class="m">אוג׳ · ו׳</span></div>
       <div class="day-title">איביזה <span class="tag">בילוי</span><small>מגיעים 12:30 · שקיעה ודינר</small></div></div>
     <ul>
       <li><b>דאלט וילה</b> — העיר העתיקה המבוצרת (יונסק״ו) בשעות אחה״צ הנעימות.</li>
@@ -369,7 +399,7 @@
   </div>
 
   <div class="day">
-    <div class="day-head"><div class="badge"><span class="d">15</span><span class="m">אוג׳ · ש׳</span></div>
+    <div class="day-head" id="d15"><div class="badge"><span class="d">15</span><span class="m">אוג׳ · ש׳</span></div>
       <div class="day-title">פלמה דה מיורקה <span class="tag">טבע</span><small>רכבת סולייר / עיר עתיקה</small></div></div>
     <ul>
       <li><b>לסולייר (טבע):</b> רדו ~08:30 — <b>רכבת סולייר</b> העתיקה דרך ההרים + טרמוואי לחוף. לוחות זמנים דלילים.</li>
@@ -386,7 +416,7 @@
   <p class="portlink">מידע על הנמל: <a href="https://www.cleancruising.com.au/port/barcelona" target="_blank" rel="noopener">ברצלונה</a> · יורדים מהאונייה ~08:30, מפקידים מזוודות ויוצאים.</p>
 
   <div class="day" style="border-right:5px solid var(--gold)">
-    <div class="day-head"><div class="badge" style="background:var(--gold)"><span class="d">16</span><span class="m">אוג׳ · א׳</span></div>
+    <div class="day-head" id="d16"><div class="badge" style="background:var(--gold)"><span class="d">16</span><span class="m">אוג׳ · א׳</span></div>
       <div class="day-title">היום הגדול בברצלונה <span class="tag">אוכל</span><span class="tag">אקשן</span><small>גאודי + שוק + שקיעה</small></div></div>
     <ul>
       <li><span class="time">~08:30</span> ירידה, הפקדת מזוודות במלון.</li>
@@ -401,7 +431,7 @@
   </div>
 
   <div class="day">
-    <div class="day-head"><div class="badge"><span class="d">17</span><span class="m">אוג׳ · ב׳</span></div>
+    <div class="day-head" id="d17"><div class="badge"><span class="d">17</span><span class="m">אוג׳ · ב׳</span></div>
       <div class="day-title">בוקר קליל ואז שדה<small>טיסה 22:35</small></div></div>
     <ul>
       <li><span class="time">בוקר</span> אזורי החינם של פארק גואל ותצפית, רכבל מונז׳ואיק, או חוף ברסלונטה. (האזור המונומנטלי בתשלום — אופציונלי.)</li>
