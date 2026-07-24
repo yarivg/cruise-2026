@@ -136,6 +136,19 @@
     .badge .d{font-size:19px}
     .band h2{font-size:23px}
   }
+
+  /* captain photo */
+  .bday{flex-wrap:wrap}
+  .bday-badge + div{flex:1 1 220px}
+  .captain{flex:none;width:118px;height:150px;object-fit:cover;border-radius:14px;
+    border:3px solid #E4C98A;box-shadow:0 3px 10px rgba(0,0,0,.15)}
+  .captain-cap{margin-top:8px;font-size:14px;color:#6B5326;font-style:italic}
+  @media (max-width:520px){.captain{width:92px;height:118px}}
+
+  /* route map */
+  figure.routemap{margin:22px 0}
+  figure.routemap img{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:14px}
+  figure.routemap figcaption{font-size:13px;color:var(--muted);margin-top:8px;text-align:center}
 </style>
 </head>
 <body>
@@ -161,13 +174,22 @@
     <div>
       <h3>🎉 לחגיגת יום ההולדת ה־60 של קפטן הקבוצה — גיל</h3>
       <p>מליסבון ועד ברצלונה, דרך שמונה נמלים וים אחד גדול — כל המשפחה על הסיפון. שתהיה הפלגה בלתי נשכחת, קפטן. יאללה, מעלים עוגן! 🥂⚓</p>
+      <p class="captain-cap">🧢 <b>הקפטן הרשמי של ההפלגה.</b> אל תדאגו, יש לו רישיון. 😄</p>
     </div>
+    <img class="captain" src="assets/captain-gil.webp" alt="גיל במדי קפטן על סיפון האונייה" loading="lazy">
   </div>
 
   <div class="lead">
     פוקוס: <b>אוכל · טבע · אקשן · היסטוריה · קניות</b> · קצב <b>מאוזן</b>.
     טיול משפחתי · 7 נפשות בליסבון · 5 בברצלונה.
   </div>
+
+  <!-- ROUTE MAP -->
+  <div class="band"><span class="num">◆</span><h2>מפת המסלול</h2></div>
+  <figure class="routemap">
+    <img src="assets/route-map.png" alt="מפת מסלול הקרוז מליסבון לברצלונה עם שמונה עצירות ממוספרות לאורך חופי פורטוגל וספרד" loading="lazy">
+    <figcaption>מליסבון (1) ועד ברצלונה (8) — שמונה עצירות לאורך חופי פורטוגל וספרד.</figcaption>
+  </figure>
 
   <!-- BOOK NOW -->
   <div class="book">
