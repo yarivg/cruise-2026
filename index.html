@@ -161,6 +161,11 @@
   .daychip .dn{font-family:"Frank Ruhl Libre";font-weight:900;font-size:17px;line-height:1}
   .daychip .dd{font-family:"Assistant";font-weight:600;font-size:11px;line-height:1;white-space:nowrap;opacity:.92}
   .day-head{scroll-margin-top:72px}
+  /* ימים בבנייה (טרם נסקרו) */
+  .day.wip{border:2px dashed var(--gold);position:relative;overflow:hidden}
+  .day.wip::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:0;background:repeating-linear-gradient(-45deg,rgba(176,129,58,.08) 0 11px,transparent 11px 22px)}
+  .day.wip>*{position:relative;z-index:1}
+  .wip-tag{display:inline-block;vertical-align:middle;background:repeating-linear-gradient(-45deg,#B0813A 0 7px,#8a6528 7px 14px);color:#fff;font-family:"Assistant";font-weight:700;font-size:11px;padding:2px 8px;border-radius:6px;margin-inline-start:6px;letter-spacing:.2px}
 </style>
 </head>
 <body>
@@ -372,9 +377,9 @@
     <div class="rd">🕐 יוצאים מהעיר ~20:00 · חזרה לאונייה ~21:15 (הפלגה 22:00) &nbsp;·&nbsp; 🍽️ ארוחת ערב: <b>טפאס בגרנדה ~18:30–19:30</b> (האוכל באונייה נסגר ב־21:30)</div>
   </div>
 
-  <div class="day">
+  <div class="day wip">
     <div class="day-head" id="d13"><div class="badge" style="background:var(--alert)"><span class="d">13</span><span class="m">אוג׳ · ה׳</span></div>
-      <div class="day-title">גיברלטר <span class="tag">אקשן</span><small class="warn">לרדת מוקדם ~07:45 — חצי יום</small></div></div>
+      <div class="day-title">גיברלטר <span class="wip-tag">🚧 בבנייה</span><span class="tag">אקשן</span><small class="warn">לרדת מוקדם ~07:45 — חצי יום</small></div></div>
     <ul>
       <li><b>רכבל אל הסלע</b> — נוף על מיצר גיברלטר.</li>
       <li><b>קופי הברברי החופשיים</b> — היילייט לצעירים (לא להאכיל, לשמור על תיקים).</li>
@@ -386,9 +391,9 @@
     <div class="rd">🕐 חזרה לאונייה: ~12:00 (חצי יום) &nbsp;·&nbsp; 🍽️ ארוחת ערב: <b>~19:30 באונייה</b></div>
   </div>
 
-  <div class="day">
+  <div class="day wip">
     <div class="day-head" id="d14"><div class="badge"><span class="d">14</span><span class="m">אוג׳ · ו׳</span></div>
-      <div class="day-title">איביזה <span class="tag">בילוי</span><small>מגיעים 12:30 · שקיעה ודינר</small></div></div>
+      <div class="day-title">איביזה <span class="wip-tag">🚧 בבנייה</span><span class="tag">בילוי</span><small>מגיעים 12:30 · שקיעה ודינר</small></div></div>
     <ul>
       <li><b>דאלט וילה</b> — העיר העתיקה המבוצרת (יונסק״ו) בשעות אחה״צ הנעימות.</li>
       <li>זמן חוף קצר / שוק ההיפים, ואז <b>שקיעה + ארוחת ערב</b>.</li>
@@ -398,9 +403,9 @@
     <div class="rd">🕐 חזרה לאונייה: ~21:30 &nbsp;·&nbsp; 🍽️ ארוחת ערב: <b>~19:30–20:45 בדאלט וילה</b> (שקיעה ודינר בעיר העתיקה)</div>
   </div>
 
-  <div class="day">
+  <div class="day wip">
     <div class="day-head" id="d15"><div class="badge"><span class="d">15</span><span class="m">אוג׳ · ש׳</span></div>
-      <div class="day-title">פלמה דה מיורקה <span class="tag">טבע</span><small>רכבת סולייר / עיר עתיקה</small></div></div>
+      <div class="day-title">פלמה דה מיורקה <span class="wip-tag">🚧 בבנייה</span><span class="tag">טבע</span><small>רכבת סולייר / עיר עתיקה</small></div></div>
     <ul>
       <li><b>לסולייר (טבע):</b> רדו ~08:30 — <b>רכבת סולייר</b> העתיקה דרך ההרים + טרמוואי לחוף. לוחות זמנים דלילים.</li>
       <li><b>לעיר (רגוע):</b> 10:00 מצוין — קתדרלת La Seu מול הים, עיר עתיקה, ושוק לוליבר.</li>
@@ -415,9 +420,9 @@
   <div class="band"><span class="num">חלק ג׳</span><h2>ברצלונה · 16–17.8 · 5 נפשות</h2></div>
   <p class="portlink">מידע על הנמל: <a href="https://www.cleancruising.com.au/port/barcelona" target="_blank" rel="noopener">ברצלונה</a> · יורדים מהאונייה ~08:30, מפקידים מזוודות ויוצאים.</p>
 
-  <div class="day" style="border-right:5px solid var(--gold)">
+  <div class="day wip">
     <div class="day-head" id="d16"><div class="badge" style="background:var(--gold)"><span class="d">16</span><span class="m">אוג׳ · א׳</span></div>
-      <div class="day-title">היום הגדול בברצלונה <span class="tag">אוכל</span><span class="tag">אקשן</span><small>גאודי + שוק + שקיעה</small></div></div>
+      <div class="day-title">היום הגדול בברצלונה <span class="wip-tag">🚧 בבנייה</span><span class="tag">אוכל</span><span class="tag">אקשן</span><small>גאודי + שוק + שקיעה</small></div></div>
     <ul>
       <li><span class="time">~08:30</span> ירידה, הפקדת מזוודות במלון.</li>
       <li><span class="time">~10:00</span> <b>סגרדה פמיליה — מבחוץ</b>: הקפה סביב הכנסייה, תמונה מהפארק (Plaça de Gaudí) עם ההשתקפות במים, וסיפור המבנה של גאודי. בלי כניסה בתשלום.</li>
@@ -430,9 +435,9 @@
     <div class="shop">🛍️ <b>קניות — שני חלונות:</b> ב-<b>Passeig de Gràcia</b> בצהריים (מותגים ואופנה, ~12:30 במסלול), ורובע <b>El Born</b> אחה״צ (בוטיקים ועיצוב, בדרך לרובע הגותי). מזכרות ומעדנים בשוק <b>לה בוקריה</b>.</div>
   </div>
 
-  <div class="day">
+  <div class="day wip">
     <div class="day-head" id="d17"><div class="badge"><span class="d">17</span><span class="m">אוג׳ · ב׳</span></div>
-      <div class="day-title">בוקר קליל ואז שדה<small>טיסה 22:35</small></div></div>
+      <div class="day-title">בוקר קליל ואז שדה <span class="wip-tag">🚧 בבנייה</span><small>טיסה 22:35</small></div></div>
     <ul>
       <li><span class="time">בוקר</span> אזורי החינם של פארק גואל ותצפית, רכבל מונז׳ואיק, או חוף ברסלונטה. (האזור המונומנטלי בתשלום — אופציונלי.)</li>
       <li>צ׳ק־אאוט מאוחר / הפקדת מזוודות, צהריים אחרון.</li>
