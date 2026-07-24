@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>יומן מסע · פורטוגל וספרד · אוגוסט 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700;900&family=Assistant:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F3F0E7;
+    --card:#FBF9F3;
+    --ink:#16293A;
+    --sea:#123F5A;
+    --tile:#2E6F9E;
+    --tile-soft:#E6EEF4;
+    --gold:#B0813A;
+    --muted:#5C6B75;
+    --line:#DAD3C4;
+    --alert:#B23A2E;
+    --ok:#2C7A54;
+  }
+  *{box-sizing:border-box}
+  html{direction:rtl}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:"Assistant",system-ui,"Segoe UI",Arial,sans-serif;
+    font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:820px;margin:0 auto;padding:0 20px 80px}
+  a{color:var(--tile);text-decoration:none;border-bottom:1px solid rgba(46,111,158,.35);transition:.15s}
+  a:hover{color:var(--sea);border-bottom-color:var(--sea)}
+  h1,h2,h3{font-family:"Frank Ruhl Libre",Georgia,serif;line-height:1.2;margin:0}
+
+  /* HERO */
+  header.hero{
+    background:linear-gradient(160deg,#123F5A 0%,#0E3247 60%,#16293A 100%);
+    color:#F6F2E8;padding:54px 20px 46px;position:relative;overflow:hidden;
+  }
+  .hero-inner{max-width:820px;margin:0 auto;position:relative;z-index:2}
+  .eyebrow{font-family:"Assistant";font-weight:700;letter-spacing:.22em;
+    font-size:12.5px;color:#8FC0DE;text-transform:uppercase;margin-bottom:14px}
+  header.hero h1{font-size:clamp(34px,7vw,58px);font-weight:900;color:#F8F4EA;letter-spacing:-.01em}
+  .hero-sub{font-size:19px;color:#CFE0EC;margin-top:10px;font-weight:500}
+  .facts{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:26px;
+    font-size:14.5px;color:#BFD6E5}
+  .facts b{color:#F1B24A;font-weight:700}
+  /* azulejo tile strip signature */
+  .tiles{position:absolute;inset:0 0 auto 0;height:100%;opacity:.10;z-index:1;
+    background-image:
+      radial-gradient(circle at 20% 30%,#fff 0 2px,transparent 3px),
+      radial-gradient(circle at 80% 70%,#fff 0 2px,transparent 3px),
+      linear-gradient(45deg,transparent 46%,#fff 47% 53%,transparent 54%),
+      linear-gradient(-45deg,transparent 46%,#fff 47% 53%,transparent 54%);
+    background-size:54px 54px;background-position:0 0;}
+
+  /* intro line */
+  .lead{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:20px 22px;margin:30px 0 8px;font-size:16px;color:var(--muted)}
+  .lead b{color:var(--ink)}
+
+  /* section titles */
+  .band{display:flex;align-items:baseline;gap:12px;margin:46px 0 18px;
+    border-bottom:2px solid var(--sea);padding-bottom:8px}
+  .band h2{font-size:27px;font-weight:900;color:var(--sea)}
+  .band .num{font-family:"Frank Ruhl Libre";font-weight:700;color:var(--tile);font-size:16px}
+
+  /* booking callout */
+  .book{background:#FCF6E9;border:1px solid #E7D6A8;border-right:5px solid var(--gold);
+    border-radius:12px;padding:18px 22px;margin:20px 0}
+  .book h3{font-size:18px;color:#7A5A1E;margin-bottom:8px}
+  .book ol{margin:0;padding-inline-start:22px}
+  .book li{margin:7px 0}
+
+  /* table */
+  .tablewrap{overflow-x:auto;margin:20px 0;border:1px solid var(--line);border-radius:12px}
+  table{border-collapse:collapse;width:100%;min-width:560px;background:var(--card);font-size:14.5px}
+  th,td{padding:10px 12px;text-align:right;border-bottom:1px solid var(--line)}
+  thead th{background:var(--sea);color:#F3EFE4;font-weight:600;font-family:"Assistant"}
+  tbody tr:last-child td{border-bottom:none}
+  tbody tr:nth-child(even){background:#F5F1E7}
+  .flag-early{color:var(--alert);font-weight:700}
+  .flag-ok{color:var(--ok);font-weight:700}
+
+  /* day cards */
+  .day{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:20px 22px 18px;margin:16px 0;position:relative}
+  .day-head{display:flex;align-items:center;gap:14px;margin-bottom:10px}
+  .badge{flex:none;width:58px;height:58px;border-radius:12px;background:var(--tile);
+    color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    line-height:1.05;box-shadow:inset 0 0 0 3px rgba(255,255,255,.18)}
+  .badge .d{font-family:"Frank Ruhl Libre";font-weight:900;font-size:22px}
+  .badge .m{font-size:11px;letter-spacing:.05em;opacity:.9}
+  .day-title{font-family:"Frank Ruhl Libre";font-weight:700;font-size:20px;color:var(--ink)}
+  .day-title small{display:block;font-family:"Assistant";font-weight:600;font-size:13px;color:var(--tile);margin-top:2px}
+  .day ul{margin:6px 0 0;padding-inline-start:20px}
+  .day li{margin:6px 0}
+  .time{font-weight:700;color:var(--sea)}
+  .veg{margin-top:10px;font-size:14px;color:var(--ok);background:#EAF3EE;
+    border-radius:8px;padding:7px 11px;display:inline-block}
+  .rd{margin-top:10px;font-size:14px;font-weight:600;color:var(--sea);
+    background:var(--tile-soft);border-radius:8px;padding:8px 12px;
+    display:flex;flex-wrap:wrap;gap:4px 16px;align-items:center}
+  .rd b{color:var(--ink)}
+  .shop{margin-top:10px;font-size:14px;color:#7A5A1E;background:#FCF6E9;
+    border-radius:8px;padding:8px 12px}
+  .shop b{color:var(--ink)}
+  .bday{display:flex;align-items:center;gap:16px;margin:28px 0 4px;
+    background:linear-gradient(135deg,#FBF1D9,#F4E1B6);
+    border:1px solid #E4C98A;border-radius:16px;padding:20px 22px}
+  .bday-badge{flex:none;width:66px;height:66px;border-radius:50%;
+    background:var(--sea);color:#F1D399;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;line-height:1;
+    font-family:"Frank Ruhl Libre";box-shadow:inset 0 0 0 4px rgba(255,255,255,.5)}
+  .bday-badge .n{font-weight:900;font-size:26px}
+  .bday-badge .t{font-size:10px;letter-spacing:.1em;margin-top:2px}
+  .bday h3{font-size:20px;color:#7A5A1E;margin-bottom:5px;font-family:"Frank Ruhl Libre"}
+  .bday p{margin:0;font-size:15px;color:#6B5326;line-height:1.6}
+  @media (max-width:520px){.bday{flex-direction:row}.bday h3{font-size:17px}}
+  .warn{color:var(--alert);font-weight:700}
+  .tag{display:inline-block;font-size:12px;font-weight:700;padding:2px 9px;border-radius:20px;
+    background:var(--tile-soft);color:var(--sea);margin-inline-start:6px}
+  .tag.big{background:#FBE7C6;color:#7A5A1E}
+
+  .portlink{font-size:13px;color:var(--muted)}
+  .portlink a{border-bottom-style:dotted}
+
+  .note{font-size:14px;color:var(--muted);margin-top:10px}
+  footer{margin-top:50px;padding-top:22px;border-top:1px solid var(--line);
+    font-size:13px;color:var(--muted);text-align:center}
+
+  @media (max-width:520px){
+    body{font-size:16px}
+    .badge{width:50px;height:50px}
+    .badge .d{font-size:19px}
+    .band h2{font-size:23px}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="tiles"></div>
+  <div class="hero-inner">
+    <div class="eyebrow">יומן מסע · משפחתי</div>
+    <h1>פורטוגל וספרד</h1>
+    <div class="hero-sub">קרוז ליסבון ← ברצלונה · 6–18 באוגוסט 2026</div>
+    <div class="facts">
+      <span><b>7</b> נפשות בליסבון · <b>5</b> בברצלונה</span>
+      <span>ספינה: <a href="https://www.cleancruising.com.au/cruise/NCLDAW007_20260809" target="_blank" rel="noopener" style="color:#8FC0DE">Norwegian Dawn · 9.8.2026</a></span>
+      <span><b>7</b> לילות · <b>8</b> נמלים · <b>2</b> מדינות</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="bday">
+    <div class="bday-badge"><span class="n">60</span><span class="t">שנה</span></div>
+    <div>
+      <h3>🎉 לחגיגת יום ההולדת ה־60 של קפטן הקבוצה — גיל</h3>
+      <p>מליסבון ועד ברצלונה, דרך שמונה נמלים וים אחד גדול — כל המשפחה על הסיפון. שתהיה הפלגה בלתי נשכחת, קפטן. יאללה, מעלים עוגן! 🥂⚓</p>
+    </div>
+  </div>
+
+  <div class="lead">
+    פוקוס: <b>אוכל · טבע · אקשן · היסטוריה · קניות</b> · קצב <b>מאוזן</b>.
+    טיול משפחתי · 7 נפשות בליסבון · 5 בברצלונה.
+  </div>
+
+  <!-- BOOK NOW -->
+  <div class="book">
+    <h3>🔴 להזמין עכשיו (נמכר מראש)</h3>
+    <ol>
+      <li><b>7.8 (ו׳) · סיור יום מודרך בעיר העתיקה של ליסבון:</b> מדריך פרטי ל־7 או סיור טיפים (קישורים ביום 7.8).</li>
+      <li><b>7.8 (ו׳) · ארוחת ליל שבת בליסבון:</b> קהילת CIL (ליד בית הכנסת שערי תקווה) — הרשמה מראש, סגירה בד״כ יום ה׳ 18:00; או חב״ד פורטוגל. חלופה: ערב פאדו.</li>
+      <li><b>10.8 (ב׳) · סיור בנאגיל מפורטימאו:</b> סירה או קיאק, מתמלא בקיץ.</li>
+      <li><b>12.8 (ד׳) · אלהמברה — ארמונות הנאסריים:</b> חלון כניסה בשעה מדויקת, קבעו סלוט אחר צהריים (~13:00–14:30). אתר רשמי: <a href="https://www.alhambra-patronato.es" target="_blank" rel="noopener">alhambra-patronato.es</a>. כולל מיניבוס פרטי מהנמל.</li>
+      <li><b>13.8 (ה׳) · סיור טקסי בגיברלטר</b> (חצי יום).</li>
+      <li><b>16.8 (א׳) · רובע אל קאל + סינגוגה מאיור בברצלונה:</b> אפשר סיור מודרך לרובע היהודי (אופציונלי).</li>
+      <li><b>הסעות פרטיות (מיניבוס):</b><br>6.8 · משדה ליסבון למלון<br>9.8 · מהמלון בליסבון לנמל הקרוז<br>16.8 · מנמל הקרוז בברצלונה למלון<br>17.8 · מהמלון בברצלונה לשדה<br>(פירוט במקטע ההסעות)</li>
+      <li><span style="color:var(--muted)">לא נכנסים לסגרדה פמיליה ולארמון פנה — סיור באזור ולמידה, בלי כרטיסים.</span></li>
+    </ol>
+  </div>
+  <p class="note"><b>שבתות בטיול:</b> 8.8 (סינטרה) ו־15.8 (פלמה) הן שבת; ליל שבת ב־7.8 (ליסבון) וב־14.8 (איביזה). מי ששומר — אפשר להתאים את הימים בהתאם.</p>
+
+  <!-- PORT TIMES -->
+  <div class="band"><span class="num">◆</span><h2>שעות הנמל וירידה מומלצת</h2></div>
+  <p class="note">״All Aboard״ הוא כ־30–60 דק׳ לפני ההפלגה — חושב פנימה בעמודת החזרה. לו״ז ההפלגה שלנו: <a href="https://www.cleancruising.com.au/cruise/NCLDAW007_20260809" target="_blank" rel="noopener">Norwegian Dawn · 9.8.2026</a> · <a href="https://gangwaze.com/cruise-lines/norwegian-cruise-line/norwegian-dawn/2026-08-09/7-nights" target="_blank" rel="noopener">מחירים ומזג אוויר (Gangwaze)</a>.</p>
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>תאריך · יעד</th><th>עוגן–הפלגה</th><th>לרדת עד</th><th>לחזור עד</th><th>סטטוס</th></tr></thead>
+    <tbody>
+      <tr><td>10.8 · פורטימאו</td><td>07:00–18:00</td><td class="flag-early">~09:00</td><td>~17:15</td><td class="flag-early">נמל טנדר</td></tr>
+      <tr><td>11.8 · קאדיס</td><td>07:00–19:00</td><td>10:00</td><td>~18:15</td><td class="flag-ok">✔ נוח</td></tr>
+      <tr><td>12.8 · גרנדה (ממוטריל)</td><td>07:00–22:00</td><td>10:00</td><td>~21:00</td><td class="flag-ok">🌟 היום הגדול</td></tr>
+      <tr><td>13.8 · גיברלטר</td><td>07:00–13:00</td><td class="flag-early">~07:45</td><td>~12:15</td><td class="flag-early">לרדת מוקדם!</td></tr>
+      <tr><td>14.8 · איביזה</td><td>12:30–22:30</td><td>מגיעים 12:30</td><td>~21:45</td><td class="flag-ok">✔ אחה״צ+ערב</td></tr>
+      <tr><td>15.8 · פלמה</td><td>07:00–18:00</td><td>08:30 / 10:00</td><td>~17:15</td><td class="flag-ok">✔ נוח</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="note"><b>שעות אוכל באונייה (Norwegian Dawn):</b> ארוחת בוקר במזנון Garden Café מ־07:00 (מוקדם אף יותר בימי נמל) — נוחתים ארוחת בוקר טובה לפני היציאה. ארוחת ערב: חדרי האוכל הראשיים 17:30–21:30, המזנון 17:00–21:30, והפאב O'Sheehan's פתוח <b>24 שעות</b> (רשת ביטחון לחזרות מאוחרות). בימים עם הפלגה מאוחרת (מוטריל, איביזה) עדיף לאכול בעיר.</p>
+  <div class="band"><span class="num">חלק א׳</span><h2>ליסבון · 6–9.8 · 7 נפשות</h2></div>
+  <p class="portlink">מידע על הנמל: <a href="https://www.cleancruising.com.au/port/lisbon" target="_blank" rel="noopener">ליסבון</a> · הכניסה הראשונה לאיחוד → רישום ביומטרי <a href="https://travel-europe.europa.eu/ees" target="_blank" rel="noopener">EES</a>.</p>
+
+  <div class="day">
+    <div class="day-head"><div class="badge"><span class="d">6</span><span class="m">אוג׳ · ה׳</span></div>
+      <div class="day-title">ערב הגעה<small>נחיתה 20:55</small></div></div>
+    <ul>
+      <li><span class="time">~21:00–22:00</span> יציאה מהשדה (אחרי EES + מזוודות), מיניבוס למלון. מומלץ מלון מרכזי בבאיישה/שיאדו.</li>
+      <li>ארוחת ערב קלה ליד המלון — לא להעמיס.</li>
+    </ul>
+  </div>
+
+  <div class="day">
+    <div class="day-head"><div class="badge"><span class="d">7</span><span class="m">אוג׳ · ו׳</span></div>
+      <div class="day-title">סיור יום בעיר העתיקה <span class="tag">אוכל</span><small>מודרך · היכרות עם ליסבון</small></div></div>
+    <ul>
+      <li><span class="time">~09:30</span> <b>סיור מודרך בעיר העתיקה</b> (חצי יום–יום): באיישה, שיאדו, אלפמה ומוראריה — סמטאות, מצפורים, היסטוריה וסיפורים, עם טעימות בדרך. לקבוצה של 7 מומלץ <b>מדריך פרטי</b> (תפור, בקצב שלכם) או סיור טיפים.</li>
+      <li><span class="time">~13:00</span> צהריים ב־Time Out Market — מגוון דוכנים, הרבה צמחוני.</li>
+      <li><span class="time">אחה״צ</span> המשך בעיר העתיקה: טרמוואי 28, טירת סאו ז׳ורז׳ה (מבחוץ/מצפור), ומצפורי אלפמה.</li>
+      <li><span class="time">ערב</span> <b>ארוחת ליל שבת</b> בקהילה היהודית (ליד שערי תקווה) או בחב״ד — 7.8 היא ליל שבת. חלופה: ערב פאדו באלפמה (להזמין ל־7). הצעירים אח״כ: Pink Street ובאירו אלטו.</li>
+    </ul>
+    <div class="note" style="border-inline-start:3px solid var(--tile);padding-inline-start:10px"><b>יהדות ליסבון:</b> בית הכנסת <b>שערי תקווה</b> (Rua Alexandre Herculano 59) מקבל מבקרים; אפשר לשלב בסיור העיר העתיקה גם את שרידי ה<b>ז׳ודיאריה</b> (הרובע היהודי הישן) באזור אלפמה. ארוחת שבת של הקהילה (CIL) — הרשמה מראש (סגירה בד״כ יום ה׳ 18:00); חב״ד פורטוגל מציע גם ארוחות כשרות.</div>
+    <div class="note"><b>אפשרויות לסיור (פרטי או טיפים):</b>
+      <a href="https://www.neweuropetours.eu/sandemans-tours/lisbon/free-tour-of-lisbon/" target="_blank" rel="noopener">SANDEMANs</a> ·
+      <a href="https://www.discoverlisbon.org/" target="_blank" rel="noopener">Discover Lisbon</a> ·
+      <a href="https://www.guruwalk.com/lisbon" target="_blank" rel="noopener">GuruWalk</a> ·
+      <a href="https://www.civitatis.com/en/lisbon/free-tour/" target="_blank" rel="noopener">Civitatis</a> ·
+      <a href="https://www.hilisbonwalkingtours.com/" target="_blank" rel="noopener">Hi Lisbon</a>.
+      מודל טיפ (~€10–15 לאדם). לקבוצה של 7 — הזמינו מראש; לחלופין מדריך פרטי בתשלום קבוע.</div>
+    <div class="shop">🛍️ <b>קניות:</b> הסיור עובר ב<b>באיישה ושיאדו</b> — רחובות הקניות הראשיים (Rua Augusta, Rua Garrett). שווה לקנות: מוצרי <b>שעם</b>, אריחי <b>אזולז׳וס</b> וקרמיקה, <b>שימורי דגים גורמה</b>, ויין פורט. יש כאן זמן בנחת.</div>
+  </div>
+
+  <div class="day">
+    <div class="day-head"><div class="badge"><span class="d">8</span><span class="m">אוג׳ · ש׳</span></div>
+      <div class="day-title">סינטרה — סיור באזור <span class="tag">טבע</span><small>בלי כניסות בתשלום · נוף ולמידה</small></div></div>
+    <ul>
+      <li><span class="time">~08:30</span> מיניבוס פרטי ל־7 לסינטרה (~40 דק׳).</li>
+      <li>שיטוט ב<b>עיירה ההיסטורית</b> של סינטרה, נקודות תצפית על <b>ארמון פנה</b> ועל הטירה המורית מרחוק, וסיפור המקום (בלי כניסה בתשלום).</li>
+      <li>אפשר לטייל בשבילי היער וב<b>גנים החיצוניים</b> ולראות את הארכיטקטורה מבחוץ.</li>
+      <li>בדרך חזרה: <b>קאבו דה רוקה</b> (הנקודה המערבית באירופה) ו/או <b>קשקאיש</b> לקפה מול הים.</li>
+      <li><span class="time">~20:30</span> ארוחת ערב במסעדה מומלצת — <b>[שם המסעדה + הזמנה: ______]</b>.</li>
+    </ul>
+    <div class="note">מדריך פרטי לחצי יום יכול לתת את ההקשר וההיסטוריה בלי להיכנס לאתרים בתשלום. טוק־טוק חוסך טיפוסים תלולים להורים. <b>8.8 היא שבת</b> — למי ששומר, אפשר במקום זאת בוקר בבית הכנסת שערי תקווה ומנוחה בליסבון.</div>
+  </div>
+
+  <div class="day">
+    <div class="day-head"><div class="badge"><span class="d">9</span><span class="m">אוג׳ · א׳</span></div>
+      <div class="day-title">עלייה לאונייה <span class="tag">יום קצר</span><small>צ׳ק־אין באונייה 12:00–12:30 · הפלגה 18:00</small></div></div>
+    <ul>
+      <li><span class="time">בוקר</span> ארוחת בוקר במלון ואריזה אחרונה.</li>
+      <li><span class="time">עד ~11:15</span> צ׳ק־אאוט מהמלון (עד 12:00), עם כל המזוודות. יום קצר — בעיקר צ׳ק־אאוט ונסיעה לאונייה.</li>
+      <li><span class="time">~11:15</span> <b>ההסעה שסגרתם מראש</b> מ־Inspira Liberdade לטרמינל הקרוז (Santa Apolónia), ~10–15 דק׳.</li>
+      <li><span class="time">12:00–12:30</span> צ׳ק־אין ועלייה לאונייה. צהריים על הסיפון, מתמקמים, ונהנים מהאונייה עד ההפלגה ב־18:00.</li>
+    </ul>
+    <div class="note">בלם ירד מהתוכנית בגלל הצ׳ק־אין המוקדם. אם בא לכם נגיעה אחרונה — קפה ו<b>פסטל דה נאטה</b> מהיר ליד המלון לפני היציאה.</div>
+    <div class="rd">🍽️ ארוחת ערב ראשונה: <b>~19:30 באונייה</b> (לאחר ההפלגה מליסבון ב־18:00)</div>
+  </div>
+
+  <!-- CRUISE -->
+  <div class="band"><span class="num">חלק ב׳</span><h2>נמלי הקרוז · 10–15.8</h2></div>
+
+  <div class="day">
+    <div class="day-head"><div class="badge"><span class="d">10</span><span class="m">אוג׳ · ב׳</span></div>
+      <div class="day-title">פורטימאו <span class="tag">טבע</span><small class="warn">נמל טנדר — לרדת ~09:00</small></div></div>
+    <ul>
+      <li><b>שיט קטמרן למערות בנאגיל</b> — יוצא ישירות ממרינה דה פורטימאו (ליד הנמל, בלי נסיעה), קטמרן יציב ~2–2.5 שעות לאורך הצוקים והמערות, כולל <b>עצירת שחייה/עגינה במפרץ שקט</b> (פראיה דה מרינה / João de Arens). מתאים בול למה שחיפשתם.</li>
+      <li>מי שרוצה גם להיכנס פנימה למערה — יש קומבו קטמרן+קיאק. להזמין מראש (מתמלא בקיץ).</li>
+    </ul>
+    <div class="rd">🕐 חזרה לאונייה: ~17:15 &nbsp;·&nbsp; 🍽️ ארוחת ערב: <b>~19:00 באונייה</b> (אחרי ההפלגה ב־18:00)</div>
+    <p class="portlink">האונייה עוגנת מול החוף: <a href="https://www.ncl.com/port-of-call/cruises-to-portimao" target="_blank" rel="noopener">NCL · פורטימאו</a> · <a href="https://www.cleancruising.com.au/port/portimao" target="_blank" rel="noopener">מידע על הנמל</a></p>
+  </div>
+
+  <div class="day">
+    <div class="day-head"><div class="badge"><span class="d">11</span><span class="m">אוג׳ · ג׳</span></div>
+      <div class="day-title">קאדיס <span class="tag">אוכל</span><small>יום רגוע בעיר · ירידה 10:00</small></div></div>
+    <ul>
+      <li><b>השוק המרכזי (Mercado Central)</b> — היכל אוכל אמיתי.</li>
+      <li>עיר עתיקה, מגדל טורה טאביה (נוף), חוף לה קלטה.</li>
+      <li>בלי סביליה — חוסכים ~3.5 שעות נסיעה ליום שלא ״הגדול״.</li>
+    </ul>
+    <p class="portlink">מידע: <a href="https://www.cleancruising.com.au/port/cadiz" target="_blank" rel="noopener">קאדיס</a></p>
+    <div class="rd">🕐 חזרה לאונייה: ~18:15 &nbsp;·&nbsp; 🍽️ ארוחת ערב: <b>~19:30 באונייה</b> (אחרי ההפלגה ב־19:00)</div>
+  </div>
+
+  <div class="day" style="border-right:5px solid var(--gold)">
+    <div class="day-head"><div class="badge" style="background:var(--gold)"><span class="d">12</span><span class="m">אוג׳ · ד׳</span></div>
+      <div class="day-title">גרנדה (ממוטריל) <span class="tag big">היום הגדול 🌟</span><small>ירידה 10:00 · הפלגה מאוחרת 22:00</small></div></div>
+    <ul>
+      <li>נסיעה ~50–75 דק׳. בגרנדה ~11:15, ויש עד ~20:00 בעיר.</li>
+      <li><b>אלהמברה</b> — ארמונות הנאסריים (חלון אחה״צ שהזמנתם) + גני גנרליף.</li>
+      <li>רובע <b>אלבייסין</b> ומצפור <b>סן ניקולס</b> — הנוף הכי יפה, ובשקיעה במיוחד.</li>
+      <li><b>יהדות:</b> שכונת <b>ריאלחו</b> — הרובע היהודי הישן של גרנדה (גַרנַטַה אל־יַהוד), עם פסל יהודה אבן תיבון. שילוב טבעי בדרך בין האלהמברה לאלבייסין.</li>
+      <li><span class="time">צהריים</span> <b>טפאס חינם</b> עם כל משקה — כיף לצמחונים.</li>
+    </ul>
+    <p class="portlink">הזמנות: <a href="https://www.alhambra-patronato.es" target="_blank" rel="noopener">כרטיסי אלהמברה</a> · <a href="https://andalusiatraveltour.com/alhambra-tours-from-motril/" target="_blank" rel="noopener">הסעות/סיור מהנמל</a> · <a href="https://www.cleancruising.com.au/port/motril" target="_blank" rel="noopener">מידע על הנמל</a></p>
+    <div class="note">הרבה הליכה בשמש — כובע, מים ונעליים נוחות.</div>
+    <div class="shop">🛍️ <b>קניות (אם נשאר זמן):</b> <b>אלקאיסריה</b> — שוק המשי הישן ליד הקתדרלה: קרמיקה, טאראסאה (עבודות עץ מעוטרות), תה ותבלינים. מרכזי, אפשר לעבור בדרך.</div>
+    <div class="rd">🕐 חזרה לאונייה: ~21:00 &nbsp;·&nbsp; 🍽️ ארוחת ערב: <b>~18:30–19:30 בגרנדה</b> (טפאס לפני הנסיעה חזרה — האוכל באונייה נסגר ב־21:30)</div>
+  </div>
+
+  <div class="day">
+    <div class="day-head"><div class="badge" style="background:var(--alert)"><span class="d">13</span><span class="m">אוג׳ · ה׳</span></div>
+      <div class="day-title">גיברלטר <span class="tag">אקשן</span><small class="warn">לרדת מוקדם ~07:45 — חצי יום</small></div></div>
+    <ul>
+      <li><b>רכבל אל הסלע</b> — נוף על מיצר גיברלטר.</li>
+      <li><b>קופי הברברי החופשיים</b> — היילייט לצעירים (לא להאכיל, לשמור על תיקים).</li>
+      <li><b>מערת סנט מייקל</b> ונקודת אירופה. סיור טקסי מהמזח מכסה הכל בזמן הקצר.</li>
+      <li><b>יהדות:</b> לגיברלטר קהילה יהודית ותיקה — אפשר לעבור ליד <b>בית הכנסת הגדול</b> (Great Synagogue, משנת 1724) באזור Main Street, ויש גם אוכל כשר.</li>
+    </ul>
+    <p class="portlink">דרכון ביד (טריטוריה בריטית) · <a href="https://www.cleancruising.com.au/port/gibraltar" target="_blank" rel="noopener">מידע על הנמל</a></p>
+    <div class="shop">🛍️ <b>קניות (אם נשאר זמן):</b> <b>Main Street</b> ליד הנמל — פטור ממע״מ (בשמים, אלכוהול, אלקטרוניקה). היום קצר, אז רק אם מסיימים את הסלע בזמן.</div>
+    <div class="rd">🕐 חזרה לאונייה: ~12:00 (חצי יום) &nbsp;·&nbsp; 🍽️ ארוחת ערב: <b>~19:30 באונייה</b></div>
+  </div>
+
+  <div class="day">
+    <div class="day-head"><div class="badge"><span class="d">14</span><span class="m">אוג׳ · ו׳</span></div>
+      <div class="day-title">איביזה <span class="tag">בילוי</span><small>מגיעים 12:30 · שקיעה ודינר</small></div></div>
+    <ul>
+      <li><b>דאלט וילה</b> — העיר העתיקה המבוצרת (יונסק״ו) בשעות אחה״צ הנעימות.</li>
+      <li>זמן חוף קצר / שוק ההיפים, ואז <b>שקיעה + ארוחת ערב</b>.</li>
+      <li>ההפלגה 22:30 — זה שקיעה־ודינר, לא קלאבינג.</li>
+    </ul>
+    <p class="portlink">מידע: <a href="https://www.cleancruising.com.au/port/ibiza-town" target="_blank" rel="noopener">איביזה</a></p>
+    <div class="rd">🕐 חזרה לאונייה: ~21:30 &nbsp;·&nbsp; 🍽️ ארוחת ערב: <b>~19:30–20:45 בדאלט וילה</b> (שקיעה ודינר בעיר העתיקה)</div>
+  </div>
+
+  <div class="day">
+    <div class="day-head"><div class="badge"><span class="d">15</span><span class="m">אוג׳ · ש׳</span></div>
+      <div class="day-title">פלמה דה מיורקה <span class="tag">טבע</span><small>רכבת סולייר / עיר עתיקה</small></div></div>
+    <ul>
+      <li><b>לסולייר (טבע):</b> רדו ~08:30 — <b>רכבת סולייר</b> העתיקה דרך ההרים + טרמוואי לחוף. לוחות זמנים דלילים.</li>
+      <li><b>לעיר (רגוע):</b> 10:00 מצוין — קתדרלת La Seu מול הים, עיר עתיקה, ושוק לוליבר.</li>
+      <li><b>יהדות:</b> ה<b>קאל</b> — הרובע היהודי הישן של פלמה, וסיפור ה<b>״צ׳ואטות״</b> (צאצאי היהודים שהומרו בכפייה). שילוב טבעי בשיטוט בעיר העתיקה.</li>
+    </ul>
+    <p class="portlink">מידע: <a href="https://www.cleancruising.com.au/port/palma-de-mallorca" target="_blank" rel="noopener">פלמה</a></p>
+    <div class="shop">🛍️ <b>קניות:</b> <b>פנינות מיורקה</b> (Majorica) — מקומי ומפורסם, לצד מוצרי עור ומותגים ספרדיים ב־<b>Passeig del Born</b> ובעיר העתיקה. משתלב בשיטוט בעיר.</div>
+    <div class="rd">🕐 חזרה לאונייה: ~17:15 &nbsp;·&nbsp; 🍽️ ארוחת ערב: <b>~19:00 באונייה</b> (אחרי ההפלגה ב־18:00)</div>
+  </div>
+
+  <!-- BARCELONA -->
+  <div class="band"><span class="num">חלק ג׳</span><h2>ברצלונה · 16–17.8 · 5 נפשות</h2></div>
+  <p class="portlink">מידע על הנמל: <a href="https://www.cleancruising.com.au/port/barcelona" target="_blank" rel="noopener">ברצלונה</a> · יורדים מהאונייה ~08:30, מפקידים מזוודות ויוצאים.</p>
+
+  <div class="day" style="border-right:5px solid var(--gold)">
+    <div class="day-head"><div class="badge" style="background:var(--gold)"><span class="d">16</span><span class="m">אוג׳ · א׳</span></div>
+      <div class="day-title">היום הגדול בברצלונה <span class="tag">אוכל</span><span class="tag">אקשן</span><small>גאודי + שוק + שקיעה</small></div></div>
+    <ul>
+      <li><span class="time">~08:30</span> ירידה, הפקדת מזוודות במלון.</li>
+      <li><span class="time">~10:00</span> <b>סגרדה פמיליה — מבחוץ</b>: הקפה סביב הכנסייה, תמונה מהפארק (Plaça de Gaudí) עם ההשתקפות במים, וסיפור המבנה של גאודי. בלי כניסה בתשלום.</li>
+      <li><span class="time">~12:30</span> שדרת Passeig de Gràcia — קאסה בטליו ולה פדררה (מבחוץ).</li>
+      <li><span class="time">~14:00</span> צהריים — טפאס בגראסיה או אל בורן (הרבה צמחוני).</li>
+      <li><span class="time">אחה״צ</span> הרובע הגותי — כולל <b>אל קאל</b>, הרובע היהודי הימי־ביניימי, ו<b>הסינגוגה מאיור</b> (מבתי הכנסת העתיקים באירופה, כיום מוזיאון קטן) — ואז לה רמבלה ושוק לה בוקריה.</li>
+      <li><span class="time">~20:00</span> עולים ל<b>בונקרס דל כרמל</b> לשקיעה — הנוף הכי יפה על העיר (השקיעה באוגוסט בסביבות <b>20:25</b>).</li>
+      <li><span class="time">ערב</span> מזרקת מונז׳ואיק — <span class="warn">בדקו לוח זמנים</span> (בקיץ בד״כ ה׳–א׳). אם לא פועל: דינר + בילוי בגראסיה.</li>
+    </ul>
+    <div class="shop">🛍️ <b>קניות:</b> <b>Passeig de Gràcia</b> (מותגים ואופנה — כבר במסלול) ורובע <b>El Born</b> (בוטיקים ועיצוב). מזכרות ומעדנים בשוק <b>לה בוקריה</b>. יש כאן זמן טוב לקניות.</div>
+  </div>
+
+  <div class="day">
+    <div class="day-head"><div class="badge"><span class="d">17</span><span class="m">אוג׳ · ב׳</span></div>
+      <div class="day-title">בוקר קליל ואז שדה<small>טיסה 22:35</small></div></div>
+    <ul>
+      <li><span class="time">בוקר</span> אזורי החינם של פארק גואל ותצפית, רכבל מונז׳ואיק, או חוף ברסלונטה. (האזור המונומנטלי בתשלום — אופציונלי.)</li>
+      <li>צ׳ק־אאוט מאוחר / הפקדת מזוודות, צהריים אחרון.</li>
+      <li><span class="time">~19:30</span> יציאה לשדה (BCN ~30–40 דק׳). שוב תהליך <a href="https://travel-europe.europa.eu/ees" target="_blank" rel="noopener">EES</a> ביציאה — מרווח.</li>
+    </ul>
+  </div>
+
+  <!-- HOTELS -->
+  <div class="band"><span class="num">◆</span><h2>מלונות</h2></div>
+
+  <div class="day">
+    <div class="day-title">ליסבון · Inspira Liberdade Boutique Hotel <span class="tag">6–9.8</span></div>
+    <ul>
+      <li><b>אזור:</b> סנטו אנטוניו — צמוד ל־Avenida da Liberdade.</li>
+      <li><b>תאריכים:</b> צ׳ק־אין ה׳ 6.8 (מ־15:00) · צ׳ק־אאוט א׳ 9.8 (עד 12:00) · 3 לילות · ארוחת בוקר כלולה.</li>
+      <li><b>חדרים:</b> 3 חדרים (2 סופיריור זוגי + דלוקס טווין) · ארוחת בוקר כלולה · ביטול חינם עד 29.7.</li>
+      <li><b>מרחקים:</b> ~15 דק׳ נסיעה משדה LIS (~7 ק״מ) · מטרו Avenida במרחק 350 מ׳ · ~15 דק׳ הליכה לרוסיו/באיישה · ~10–15 דק׳ נסיעה לטרמינל הקרוז (Santa Apolónia) · יושב על שדרת הקניות היוקרתית Avenida da Liberdade.</li>
+    </ul>
+    <div class="note">📌 לבדוק: לוודא שהאורח ה־7 נוסף להזמנה בליסבון.</div>
+  </div>
+
+  <div class="day">
+    <div class="day-title">ברצלונה · Catalonia Diagonal Centro <span class="tag">16–17.8</span></div>
+    <ul>
+      <li><b>אזור:</b> אישמפלה (Balmes / Diagonal).</li>
+      <li><b>תאריכים:</b> צ׳ק־אין א׳ 16.8 (מ־15:00) · צ׳ק־אאוט ב׳ 17.8 (עד 12:00) · לילה 1 · ארוחת בוקר כלולה.</li>
+      <li><b>חדרים:</b> 2 חדרים — טריפל (3) + זוגי (2) = <b>5 אורחים</b> · ארוחת בוקר כלולה · ביטול חינם עד 13.8.</li>
+      <li><b>מרחקים:</b> ~5 דק׳ הליכה ל־Passeig de Gràcia ולה פדררה · סגרדה פמיליה 2 תחנות מטרו (~10 דק׳ נסיעה) · פארק גואל ~2.2 ק״מ · ~15–20 דק׳ מטרמינל הקרוז · ~25–30 דק׳ משדה BCN (18 ק״מ) · באזור הקניות Balmes/Diagonal.</li>
+    </ul>
+    <div class="rd" style="background:#EAF3EE;color:var(--ok)">✓ <b>תואם:</b> 5 אורחים · 2 חדרים · לילה אחד (16→17.8). זכרו: יורדים מהאונייה ב־06:00 אבל צ׳ק־אין רק מ־15:00 — להפקיד מזוודות בבוקר ולצאת לסיור.</div>
+  </div>
+
+  <!-- TRANSFERS -->
+  <div class="band"><span class="num">◆</span><h2>הסעות פרטיות (מיניבוס)</h2></div>
+  <p class="note">עם 7 נפשות ומזוודות — עדיף מיניבוס פרטי מוזמן מראש לכל קטע (רכב אחד, בלי לחלק לכמה מוניות). כדאי מיניבוס של 9–10 מקומות כדי שיהיה מקום גם למטען.</p>
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>תאריך</th><th>קטע</th><th>נוסעים</th><th>רכב</th></tr></thead>
+    <tbody>
+      <tr><td>6.8</td><td><b>משדה ליסבון</b> (LIS) <b>ל־Inspira Liberdade</b></td><td>7 + מזוודות</td><td>מיניבוס 9–10</td></tr>
+      <tr><td>9.8</td><td><b>מ־Inspira Liberdade</b> <b>לנמל הקרוז</b> (Santa Apolónia)</td><td>7 + מזוודות</td><td>מיניבוס 9–10</td></tr>
+      <tr><td>16.8</td><td><b>מנמל הקרוז בברצלונה</b> <b>ל־Catalonia Diagonal Centro</b></td><td>5 + מזוודות</td><td>ואן / מיניבוס</td></tr>
+      <tr><td>17.8</td><td><b>מ־Catalonia Diagonal Centro</b> <b>לשדה</b> (BCN)</td><td>5 + מזוודות</td><td>ואן / מיניבוס</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="day">
+    <ul>
+      <li><b>ליסבון:</b> השדה (LIS) ~15 דק׳ מהמרכז. נמל הקרוז במזרח (Santa Apolónia / Jardim do Tabaco) — קרוב לאלפמה, ~10–15 דק׳ מהמרכז.</li>
+      <li><b>ברצלונה:</b> נמל הקרוז (מסופי Adossat) דורש שאטל קצר עד שער הנמל; משם ~15–20 דק׳ למרכז. השדה (BCN) ~30–40 דק׳ מהמרכז.</li>
+      <li><b>איפה מזמינים:</b> חברות הסעה פרטיות/שאטל, שירותי איסוף מראש (למשל Welcome Pickups ודומיהם), או דרך המלון. אפשר גם להזמין <b>Transfer רשמי של NCL</b> בין השדה/מלון לנמל.</li>
+      <li>שווה לתת מראש את מספרי הטיסה ושעות ההגעה כדי שהנהג יעקוב אחרי עיכובים.</li>
+    </ul>
+  </div>
+
+  <!-- LOGISTICS -->
+  <div class="band"><span class="num">◆</span><h2>לוגיסטיקה</h2></div>
+  <div class="day">
+    <ul>
+      <li><b>הסעות בישראל:</b> לפי הכרטיס — מזוודה רשומה אחת + טרולי לכל כיוון לנוסע. אם כל ה־7 דומים: עד ~7 מזוודות → <b>מיניבוס 9–10 מקומות</b>, במיוחד בחזור (נחיתה 03:40).</li>
+      <li><b>EES:</b> רישום ביומטרי בכניסה (ליסבון) וביציאה (ברצלונה) — מוסיף זמן בגבול.</li>
+      <li><b>סוללות ליתיום / מטענים:</b> רק בתיק יד, לפי מדיניות אל על.</li>
+      <li><b>תרופות:</b> לפזר בין נוסעים, בתיק יד.</li>
+      <li>בין נמלי הקרוז (למעט גיברלטר) אין ביקורת גבולות — רק תעודת אונייה בירידה.</li>
+    </ul>
+  </div>
+
+  <footer>
+    בנוי לפי <a href="https://www.cleancruising.com.au/cruise/NCLDAW007_20260809" target="_blank" rel="noopener">הפלגת Norwegian Dawn · 9 באוגוסט 2026</a> (<a href="https://gangwaze.com/cruise-lines/norwegian-cruise-line/norwegian-dawn/2026-08-09/7-nights" target="_blank" rel="noopener">לו״ז מלא ב־Gangwaze</a>) · טיסות אל על (שעון מקומי).<br>
+    שעות ולוחות זמנים עשויים להשתנות — לאמת מול המפעילים לפני הזמנה.
+  </footer>
+
+</div>
+</body>
+</html>
