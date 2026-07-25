@@ -161,6 +161,11 @@
   .daychip .dw{font-family:"Assistant";font-weight:600;font-size:10px;line-height:1;opacity:.72}
   .daychip .dn{font-family:"Frank Ruhl Libre";font-weight:900;font-size:17px;line-height:1}
   .daychip .dd{font-family:"Assistant";font-weight:600;font-size:11px;line-height:1;white-space:nowrap;opacity:.92}
+  /* סטטוס יום על צ׳יפ הניווט */
+  .daychip{position:relative}
+  .daychip .dstat{position:absolute;top:2px;inset-inline-start:3px;font-size:9px;line-height:1}
+  .daynav-legend{display:flex;flex-wrap:wrap;gap:3px 14px;justify-content:center;padding:5px 10px 2px;font-size:11px;color:#CFE0EC;background:var(--sea)}
+  .daynav-legend span{white-space:nowrap}
   .day-head{scroll-margin-top:72px}
   /* ימים בבנייה (טרם נסקרו) */
   .day.wip{border:2px dashed var(--gold);position:relative;overflow:hidden}
@@ -172,19 +177,24 @@
 <body>
 
 <nav class="daynav" aria-label="ניווט בין ימי הטיול">
+  <div class="daynav-legend">
+    <span>✅ מוכן</span>
+    <span>⚠️ חסרות הזמנות</span>
+    <span>🚧 בבנייה</span>
+  </div>
   <div class="daynav-track">
-    <a class="daychip" href="#d6"><span class="dw">ה׳</span><span class="dn">6</span><span class="dd">🇵🇹 ליסבון</span></a>
-    <a class="daychip" href="#d7"><span class="dw">ו׳</span><span class="dn">7</span><span class="dd">🇵🇹 ליסבון</span></a>
-    <a class="daychip" href="#d8"><span class="dw">ש׳</span><span class="dn">8</span><span class="dd">🇵🇹 סינטרה</span></a>
-    <a class="daychip" href="#d9"><span class="dw">א׳</span><span class="dn">9</span><span class="dd">🇵🇹 הפלגה</span></a>
-    <a class="daychip" href="#d10"><span class="dw">ב׳</span><span class="dn">10</span><span class="dd">🇵🇹 פורטימאו</span></a>
-    <a class="daychip" href="#d11"><span class="dw">ג׳</span><span class="dn">11</span><span class="dd">🇪🇸 קאדיס</span></a>
-    <a class="daychip" href="#d12"><span class="dw">ד׳</span><span class="dn">12</span><span class="dd">🇪🇸 גרנדה</span></a>
-    <a class="daychip" href="#d13"><span class="dw">ה׳</span><span class="dn">13</span><span class="dd">🇬🇮 גיברלטר</span></a>
-    <a class="daychip" href="#d14"><span class="dw">ו׳</span><span class="dn">14</span><span class="dd">🇪🇸 איביזה</span></a>
-    <a class="daychip" href="#d15"><span class="dw">ש׳</span><span class="dn">15</span><span class="dd">🇪🇸 פלמה</span></a>
-    <a class="daychip" href="#d16"><span class="dw">א׳</span><span class="dn">16</span><span class="dd">🇪🇸 ברצלונה</span></a>
-    <a class="daychip" href="#d17"><span class="dw">ב׳</span><span class="dn">17</span><span class="dd">🇪🇸 טיסה</span></a>
+    <a class="daychip" href="#d6"><span class="dstat">✅</span><span class="dw">ה׳</span><span class="dn">6</span><span class="dd">🇵🇹 ליסבון</span></a>
+    <a class="daychip" href="#d7"><span class="dstat">⚠️</span><span class="dw">ו׳</span><span class="dn">7</span><span class="dd">🇵🇹 ליסבון</span></a>
+    <a class="daychip" href="#d8"><span class="dstat">✅</span><span class="dw">ש׳</span><span class="dn">8</span><span class="dd">🇵🇹 סינטרה</span></a>
+    <a class="daychip" href="#d9"><span class="dstat">✅</span><span class="dw">א׳</span><span class="dn">9</span><span class="dd">🇵🇹 הפלגה</span></a>
+    <a class="daychip" href="#d10"><span class="dstat">✅</span><span class="dw">ב׳</span><span class="dn">10</span><span class="dd">🇵🇹 פורטימאו</span></a>
+    <a class="daychip" href="#d11"><span class="dstat">✅</span><span class="dw">ג׳</span><span class="dn">11</span><span class="dd">🇪🇸 קאדיס</span></a>
+    <a class="daychip" href="#d12"><span class="dstat">⚠️</span><span class="dw">ד׳</span><span class="dn">12</span><span class="dd">🇪🇸 גרנדה</span></a>
+    <a class="daychip" href="#d13"><span class="dstat">✅</span><span class="dw">ה׳</span><span class="dn">13</span><span class="dd">🇬🇮 גיברלטר</span></a>
+    <a class="daychip" href="#d14"><span class="dstat">🚧</span><span class="dw">ו׳</span><span class="dn">14</span><span class="dd">🇪🇸 איביזה</span></a>
+    <a class="daychip" href="#d15"><span class="dstat">🚧</span><span class="dw">ש׳</span><span class="dn">15</span><span class="dd">🇪🇸 פלמה</span></a>
+    <a class="daychip" href="#d16"><span class="dstat">🚧</span><span class="dw">א׳</span><span class="dn">16</span><span class="dd">🇪🇸 ברצלונה</span></a>
+    <a class="daychip" href="#d17"><span class="dstat">🚧</span><span class="dw">ב׳</span><span class="dn">17</span><span class="dd">🇪🇸 טיסה</span></a>
   </div>
 </nav>
 
@@ -207,8 +217,8 @@
   <div class="bday">
     <div class="bday-badge"><span class="n">60</span><span class="t">שנה</span></div>
     <div>
-      <h3>🎉 לחגיגת יום ההולדת ה־60 של קפטן הקבוצה — גיל</h3>
-      <p>מליסבון ועד ברצלונה, דרך שמונה נמלים וים אחד גדול — כל המשפחה על הסיפון. שתהיה הפלגה בלתי נשכחת, קפטן. יאללה, מעלים עוגן! 🥂⚓</p>
+      <h3>🎉 לחגיגת יום ההולדת ה־60 של קפטן הקבוצה - גיל</h3>
+      <p>מליסבון ועד ברצלונה, דרך שמונה נמלים וים אחד גדול - כל המשפחה על הסיפון. שתהיה הפלגה בלתי נשכחת, קפטן. יאללה, מעלים עוגן! 🥂⚓</p>
       <p class="captain-cap">🧢 <b>הקפטן הרשמי של ההפלגה.</b> אל תדאגו, יש לו רישיון. 😄</p>
     </div>
     <img class="captain" src="assets/captain-gil.webp" alt="גיל במדי קפטן על סיפון האונייה" loading="lazy">
@@ -223,27 +233,25 @@
   <div class="book">
     <h3>🔴 להזמין עכשיו (נמכר מראש)</h3>
     <ol>
-      <li><b>7.8 (ו׳) · ארוחת ליל שבת בליסבון:</b> קהילת CIL (ליד בית הכנסת שערי תקווה) — הרשמה מראש, סגירה בד״כ יום ה׳ 18:00; או חב״ד פורטוגל. חלופה: ערב פאדו.</li>
-      <li><b>12.8 (ד׳) · אלהמברה — כרטיס General €22.27:</b> חלון נאסריים <b>~13:00–14:00</b> (בשעה מדויקת!). אתר רשמי: <a href="https://www.alhambra-patronato.es" target="_blank" rel="noopener">alhambra-patronato.es</a>. אוזל מהר באוגוסט — לקנות מיד.</li>
-      <li><b>12.8 (ד׳) · הסעה פרטית הלוך-חזור מוטריל↔גרנדה:</b> שני טרנספרים (איסוף בנמל ~10:00 · חזרה מגרנדה ~20:00) — Kiwitaxi / monTransport / Daytrip. אין רכבת, ואוטובוס לא מומלץ לחזרה.</li>
-      <li><b>13.8 (ה׳) · סיור טקסי בגיברלטר</b> (חצי יום).</li>
+      <li><b>7.8 (ו׳) · ארוחת ליל שבת בליסבון:</b> קהילת CIL (ליד בית הכנסת שערי תקווה) - הרשמה מראש, סגירה בד״כ יום ה׳ 18:00; או חב״ד פורטוגל. חלופה: ערב פאדו.</li>
+      <li><b>12.8 (ד׳) · אלהמברה - כרטיס General €22.27:</b> חלון נאסריים <b>~13:00–14:00</b> (בשעה מדויקת!). אתר רשמי: <a href="https://www.alhambra-patronato.es" target="_blank" rel="noopener">alhambra-patronato.es</a>. אוזל מהר באוגוסט - לקנות מיד.</li>
+      <li><b>12.8 (ד׳) · הסעה פרטית הלוך-חזור מוטריל↔גרנדה:</b> שני טרנספרים (איסוף בנמל ~10:00 · חזרה מגרנדה ~20:00) - Kiwitaxi / monTransport / Daytrip. אין רכבת, ואוטובוס לא מומלץ לחזרה.</li>
       <li><b>16.8 (א׳) · רובע אל קאל + סינגוגה מאיור בברצלונה:</b> אפשר סיור מודרך לרובע היהודי (אופציונלי).</li>
-      <li><b>הסעות בברצלונה (ואן/מיניבוס מראש):</b><br>16.8 · מנמל הקרוז בברצלונה למלון<br>17.8 · מהמלון בברצלונה לשדה<br>(בליסבון — Bolt במקום, ללא הזמנה מראש · פירוט במקטע ההסעות)</li>
-      <li><span style="color:var(--muted)">לא נכנסים לסגרדה פמיליה ולארמון פנה — סיור באזור ולמידה, בלי כרטיסים.</span></li>
+      <li><b>הסעות בברצלונה (ואן/מיניבוס מראש):</b><br>16.8 · מנמל הקרוז בברצלונה למלון<br>17.8 · מהמלון בברצלונה לשדה</li>
     </ol>
   </div>
-  <p class="note"><b>שבתות בטיול:</b> 8.8 (סינטרה) ו־15.8 (פלמה) הן שבת; ליל שבת ב־7.8 (ליסבון) וב־14.8 (איביזה). מי ששומר — אפשר להתאים את הימים בהתאם.</p>
+  <p class="note"><b>שבתות בטיול:</b> 8.8 (סינטרה) ו־15.8 (פלמה) הן שבת; ליל שבת ב־7.8 (ליסבון) וב־14.8 (איביזה). מי ששומר - אפשר להתאים את הימים בהתאם.</p>
 
   <!-- ROUTE MAP -->
   <div class="band"><span class="num">◆</span><h2>מפת המסלול</h2></div>
   <figure class="routemap">
     <img src="assets/route-map.png" alt="מפת מסלול הקרוז מליסבון לברצלונה עם שמונה עצירות ממוספרות לאורך חופי פורטוגל וספרד" loading="lazy">
-    <figcaption>מליסבון (1) ועד ברצלונה (8) — שמונה עצירות לאורך חופי פורטוגל וספרד.</figcaption>
+    <figcaption>מליסבון (1) ועד ברצלונה (8) - שמונה עצירות לאורך חופי פורטוגל וספרד.</figcaption>
   </figure>
 
   <!-- PORT TIMES -->
   <div class="band"><span class="num">◆</span><h2>שעות הנמל וירידה מומלצת</h2></div>
-  <p class="note">״All Aboard״ הוא כ־30–60 דק׳ לפני ההפלגה — חושב פנימה בעמודת החזרה. לו״ז ההפלגה שלנו: <a href="https://www.cleancruising.com.au/cruise/NCLDAW007_20260809" target="_blank" rel="noopener">Norwegian Dawn · 9.8.2026</a> · <a href="https://gangwaze.com/cruise-lines/norwegian-cruise-line/norwegian-dawn/2026-08-09/7-nights" target="_blank" rel="noopener">מחירים ומזג אוויר (Gangwaze)</a>.</p>
+  <p class="note">״All Aboard״ הוא כ־30–60 דק׳ לפני ההפלגה - חושב פנימה בעמודת החזרה. לו״ז ההפלגה שלנו: <a href="https://www.cleancruising.com.au/cruise/NCLDAW007_20260809" target="_blank" rel="noopener">Norwegian Dawn · 9.8.2026</a> · <a href="https://gangwaze.com/cruise-lines/norwegian-cruise-line/norwegian-dawn/2026-08-09/7-nights" target="_blank" rel="noopener">מחירים ומזג אוויר (Gangwaze)</a>.</p>
   <div class="tablewrap">
   <table>
     <thead><tr><th>תאריך · יעד</th><th>עוגן–הפלגה</th><th>לרדת עד</th><th>לחזור עד</th><th>סטטוס</th></tr></thead>
@@ -257,7 +265,7 @@
     </tbody>
   </table>
   </div>
-  <p class="note"><b>שעות אוכל באונייה (Norwegian Dawn):</b> ארוחת בוקר במזנון Garden Café מ־07:00 (מוקדם אף יותר בימי נמל) — נוחתים ארוחת בוקר טובה לפני היציאה. ארוחת ערב: חדרי האוכל הראשיים 17:30–21:30, המזנון 17:00–21:30, והפאב O'Sheehan's פתוח <b>24 שעות</b> (רשת ביטחון לחזרות מאוחרות). בימים עם הפלגה מאוחרת (מוטריל, איביזה) עדיף לאכול בעיר.</p>
+  <p class="note"><b>שעות אוכל באונייה (Norwegian Dawn):</b> ארוחת בוקר במזנון Garden Café מ־07:00 (מוקדם אף יותר בימי נמל) - נוחתים ארוחת בוקר טובה לפני היציאה. ארוחת ערב: חדרי האוכל הראשיים 17:30–21:30, המזנון 17:00–21:30, והפאב O'Sheehan's פתוח <b>24 שעות</b> (רשת ביטחון לחזרות מאוחרות). בימים עם הפלגה מאוחרת (מוטריל, איביזה) עדיף לאכול בעיר.</p>
   <div class="band"><span class="num">חלק א׳</span><h2>ליסבון · 6–9.8 · 7 נפשות</h2></div>
   <p class="portlink">מידע על הנמל: <a href="https://www.cleancruising.com.au/port/lisbon" target="_blank" rel="noopener">ליסבון</a> · הכניסה הראשונה לאיחוד → רישום ביומטרי <a href="https://travel-europe.europa.eu/ees" target="_blank" rel="noopener">EES</a>.</p>
 
@@ -266,7 +274,7 @@
       <div class="day-title">ערב הגעה<small>נחיתה 20:55</small></div></div>
     <ul>
       <li><span class="time">~21:00–22:00</span> יציאה מהשדה (אחרי EES + מזוודות), <b>Bolt</b> למלון (מזמינים באפליקציה בשדה, ללא הזמנה מראש). מומלץ מלון מרכזי בבאיישה/שיאדו.</li>
-      <li>ארוחת ערב קלה ליד המלון — לא להעמיס.</li>
+      <li>ארוחת ערב קלה ליד המלון - לא להעמיס.</li>
     </ul>
   </div>
 
@@ -274,48 +282,48 @@
     <div class="day-head" id="d7"><div class="badge"><span class="d">7</span><span class="m">אוג׳ · ו׳</span></div>
       <div class="day-title">סיור יום בעיר העתיקה <span class="tag">אוכל</span><small>מודרך · היכרות עם ליסבון</small></div></div>
     <ul>
-      <li><span class="time">10:00</span> <b>סיור מודרך בעיר העתיקה (בעברית) — מוזמן ✓</b> · סיור חינמי (מודל טיפ) עם המדריך <b>אמיר כהן</b>. <b>מפגש:</b> מול בית הקפה <a href="https://maps.app.goo.gl/5xZvsU5RBJzA6Zo17" target="_blank" rel="noopener">Graça 77 · Largo da Graça 77</a> (אזור גראסה/אלפמה — מצפורים יפים). להגיע כמה דק׳ לפני.</li>
-      <li><span class="time">אמצע היום</span> נשנוש ב־Time Out Market תוך כדי — מגוון דוכנים, הרבה צמחוני. בלי ארוחה כבדה.</li>
+      <li><span class="time">10:00</span> <b>סיור מודרך בעיר העתיקה (בעברית) - מוזמן ✓</b> · סיור חינמי (מודל טיפ) עם המדריך <b>אמיר כהן</b>. <b>מפגש:</b> מול בית הקפה <a href="https://maps.app.goo.gl/5xZvsU5RBJzA6Zo17" target="_blank" rel="noopener">Graça 77 · Largo da Graça 77</a> (אזור גראסה/אלפמה - מצפורים יפים). להגיע כמה דק׳ לפני.</li>
+      <li><span class="time">אמצע היום</span> נשנוש ב־Time Out Market תוך כדי - מגוון דוכנים, הרבה צמחוני. בלי ארוחה כבדה.</li>
       <li><span class="time">אחה״צ</span> המשך בעיר העתיקה: טרמוואי 28, טירת סאו ז׳ורז׳ה (מבחוץ/מצפור), ומצפורי אלפמה.</li>
-      <li><span class="time">~15:00–17:00</span> 🛍️ <b>זמן קניות בנחת — באיישה ושיאדו</b> (Rua Augusta, Rua Garrett; פירוט בהערה למטה). אח״כ חזרה למלון להתרעננות לפני ליל שבת.</li>
-      <li><span class="time">ערב</span> <b>ארוחת ליל שבת</b> בקהילה היהודית (ליד שערי תקווה) או בחב״ד — 7.8 היא ליל שבת. <span class="tag" style="background:var(--alert);color:#fff">בבדיקה — טרם אושר מול הקהילה/חב״ד</span> חלופה: ערב פאדו באלפמה (להזמין ל־7). הצעירים אח״כ: Pink Street ובאירו אלטו.</li>
+      <li><span class="time">~15:00–17:00</span> 🛍️ <b>זמן קניות בנחת - באיישה ושיאדו</b> (Rua Augusta, Rua Garrett; פירוט בהערה למטה). אח״כ חזרה למלון להתרעננות לפני ליל שבת.</li>
+      <li><span class="time">ערב</span> <b>ארוחת ליל שבת</b> בקהילה היהודית (ליד שערי תקווה) או בחב״ד - 7.8 היא ליל שבת. <span class="tag" style="background:var(--alert);color:#fff">בבדיקה - טרם אושר מול הקהילה/חב״ד</span> חלופה: ערב פאדו באלפמה (להזמין ל־7). הצעירים אח״כ: Pink Street ובאירו אלטו.</li>
     </ul>
-    <div class="note" style="border-inline-start:3px solid var(--tile);padding-inline-start:10px"><b>יהדות ליסבון:</b> בית הכנסת <b>שערי תקווה</b> (Rua Alexandre Herculano 59) מקבל מבקרים; אפשר לשלב בסיור העיר העתיקה גם את שרידי ה<b>ז׳ודיאריה</b> (הרובע היהודי הישן) באזור אלפמה. ארוחת שבת של הקהילה (CIL) — הרשמה מראש (סגירה בד״כ יום ה׳ 18:00); חב״ד פורטוגל מציע גם ארוחות כשרות.</div>
-    <div class="note"><b>המדריך:</b> אמיר כהן — מדריך סיורים בעברית בליסבון ובפורטו · <a href="mailto:amir.portugal@siyurim.co.il">amir.portugal@siyurim.co.il</a>. מודל טיפ (~€10–15 לאדם). ההרשמה דרך "כוכב ליסבון". הסיור מתחיל בגראסה (מעלה אלפמה) ויורד דרך הסמטאות והמצפורים.</div>
-    <div class="shop">🛍️ <b>קניות:</b> הסיור עובר ב<b>באיישה ושיאדו</b> — רחובות הקניות הראשיים (Rua Augusta, Rua Garrett). שווה לקנות: מוצרי <b>שעם</b>, אריחי <b>אזולז׳וס</b> וקרמיקה, <b>שימורי דגים גורמה</b>, ויין פורט. יש כאן זמן בנחת.</div>
-    <div class="note" style="border-inline-start:3px solid var(--alert)">🔔 <b>משימה להיום (7.8) — לקראת סינטרה מחר:</b> לבקש מקבלת המלון <b>ארוחת בוקר מוקדמת/ארוזה ל־8.8</b> (יוצאים ~07:30 לסיור 08:00), ולוודא את שעת פתיחת הבופה בשבת.</div>
+    <div class="note" style="border-inline-start:3px solid var(--tile);padding-inline-start:10px"><b>יהדות ליסבון:</b> בית הכנסת <b>שערי תקווה</b> (Rua Alexandre Herculano 59) מקבל מבקרים; אפשר לשלב בסיור העיר העתיקה גם את שרידי ה<b>ז׳ודיאריה</b> (הרובע היהודי הישן) באזור אלפמה. ארוחת שבת של הקהילה (CIL) - הרשמה מראש (סגירה בד״כ יום ה׳ 18:00); חב״ד פורטוגל מציע גם ארוחות כשרות.</div>
+    <div class="note"><b>המדריך:</b> אמיר כהן - מדריך סיורים בעברית בליסבון ובפורטו · <a href="mailto:amir.portugal@siyurim.co.il">amir.portugal@siyurim.co.il</a>. מודל טיפ (~€10–15 לאדם). ההרשמה דרך "כוכב ליסבון". הסיור מתחיל בגראסה (מעלה אלפמה) ויורד דרך הסמטאות והמצפורים.</div>
+    <div class="shop">🛍️ <b>קניות:</b> הסיור עובר ב<b>באיישה ושיאדו</b> - רחובות הקניות הראשיים (Rua Augusta, Rua Garrett). שווה לקנות: מוצרי <b>שעם</b>, אריחי <b>אזולז׳וס</b> וקרמיקה, <b>שימורי דגים גורמה</b>, ויין פורט. יש כאן זמן בנחת.</div>
+    <div class="note" style="border-inline-start:3px solid var(--alert)">🔔 <b>משימה להיום (7.8) - לקראת סינטרה מחר:</b> לבקש מקבלת המלון <b>ארוחת בוקר מוקדמת/ארוזה ל־8.8</b> (יוצאים ~07:30 לסיור 08:00), ולוודא את שעת פתיחת הבופה בשבת.</div>
   </div>
 
   <div class="day">
     <div class="day-head" id="d8"><div class="badge"><span class="d">8</span><span class="m">אוג׳ · ש׳</span></div>
-      <div class="day-title">סינטרה — סיור מאורגן <span class="tag">✓ מוזמן</span><span class="tag">טבע</span><small>ODYSSEY Tours · יציאה 08:00 מרוסיו</small></div></div>
+      <div class="day-title">סינטרה - סיור מאורגן <span class="tag">✓ מוזמן</span><span class="tag">טבע</span><small>ODYSSEY Tours · יציאה 08:00 מרוסיו</small></div></div>
     <ul>
-      <li><span class="time">~07:00</span> ארוחת בוקר מהירה במלון <b>אם הבופה כבר פתוח</b> (בסופ״ש נפתח מאוחר יותר, ~07:30 — לאמת מול הקבלה). אם עדיין סגור — <b>ארוחת בוקר ארוזה מהקבלה</b> (לבקש יום לפני). יוצאים מהמלון ~07:30.</li>
-      <li><span class="time">07:50</span> <b>מפגש בתחנת רוסיו</b> — <a href="https://www.google.com/maps/search/?api=1&query=Esta%C3%A7%C3%A3o%20do%20Rossio%2C%20Pra%C3%A7a%20Dom%20Jo%C3%A3o%20da%20C%C3%A2mara%2C%201200-147%20Lisboa" target="_blank" rel="noopener">Estação do Rossio, Praça Dom João da Câmara</a> (ליד ה־Starbucks). להגיע 10 דק׳ מוקדם — לא ממתינים למאחרים. מ־Inspira Liberdade ~12 דק׳ הליכה או Bolt קצר.</li>
-      <li><span class="time">08:00</span> יציאה בהסעה מאורגנת (~30 דק׳). <b>אופציית הסעה בלבד</b> — הכניסות נקנות במקום עם המדריך (כפוף לזמינות).</li>
-      <li><span class="time">~08:40</span> <b>סינטרה — העיירה ההיסטורית:</b> סיור מודרך + זמן חופשי (~60 דק׳).</li>
-      <li><span class="time">~09:45</span> <b>קיינטה דה רגלירה:</b> ביקור וסיור מודרך (~90 דק׳ עם תור בכניסה) — הבאר ההפוכה, מנהרות וגנים. כניסה <b>€22 — נכנסים ✓</b> (לקנות עם המדריך; נמכר מהר).</li>
-      <li><span class="time">~11:30</span> <b>ארמון פנה:</b> ~1.5–2 שעות עם עלייה, תור ונופים בדרך. <b>אנחנו לפארק/גנים בלבד — €10, בלי פנים הארמון.</b> טיפוס תלול; טוק־טוק חוסך את העלייה.</li>
+      <li><span class="time">~07:00</span> ארוחת בוקר מהירה במלון <b>אם הבופה כבר פתוח</b> (בסופ״ש נפתח מאוחר יותר, ~07:30 - לאמת מול הקבלה). אם עדיין סגור - <b>ארוחת בוקר ארוזה מהקבלה</b> (לבקש יום לפני). יוצאים מהמלון ~07:30.</li>
+      <li><span class="time">07:50</span> <b>מפגש בתחנת רוסיו</b> - <a href="https://www.google.com/maps/search/?api=1&query=Esta%C3%A7%C3%A3o%20do%20Rossio%2C%20Pra%C3%A7a%20Dom%20Jo%C3%A3o%20da%20C%C3%A2mara%2C%201200-147%20Lisboa" target="_blank" rel="noopener">Estação do Rossio, Praça Dom João da Câmara</a> (ליד ה־Starbucks). להגיע 10 דק׳ מוקדם - לא ממתינים למאחרים. מ־Inspira Liberdade ~12 דק׳ הליכה או Bolt קצר.</li>
+      <li><span class="time">08:00</span> יציאה בהסעה מאורגנת (~30 דק׳). <b>אופציית הסעה בלבד</b> - הכניסות נקנות במקום עם המדריך (כפוף לזמינות).</li>
+      <li><span class="time">~08:40</span> <b>סינטרה - העיירה ההיסטורית:</b> סיור מודרך + זמן חופשי (~60 דק׳).</li>
+      <li><span class="time">~09:45</span> <b>קיינטה דה רגלירה:</b> ביקור וסיור מודרך (~90 דק׳ עם תור בכניסה) - הבאר ההפוכה, מנהרות וגנים. כניסה <b>€22 - נכנסים ✓</b> (לקנות עם המדריך; נמכר מהר).</li>
+      <li><span class="time">~11:30</span> <b>ארמון פנה:</b> ~1.5–2 שעות עם עלייה, תור ונופים בדרך. <b>אנחנו לפארק/גנים בלבד - €10, בלי פנים הארמון.</b> טיפוס תלול; טוק־טוק חוסך את העלייה.</li>
       <li><span class="time">~13:30</span> <b>חוף גינשו (Guincho):</b> עצירת צילום ונוף (~15–20 דק׳).</li>
-      <li><span class="time">~14:00</span> <b>קשקאיש:</b> זמן חופשי ~2 שעות — נשנוש קליל מול הים, טיילת ועיר עתיקה.</li>
+      <li><span class="time">~14:00</span> <b>קשקאיש:</b> זמן חופשי ~2 שעות - נשנוש קליל מול הים, טיילת ועיר עתיקה.</li>
       <li><span class="time">~16:15</span> חזרה לליסבון (~40 דק׳) · הורדה ב־Starbucks/רוסיו <b>~17:00</b>.</li>
-      <li><span class="time">20:30</span> <b>ארוחת ערב — <a href="https://www.google.com/maps/search/?api=1&query=La%20Fiorentina%20restaurant%2C%20Lisboa" target="_blank" rel="noopener">La Fiorentina</a> (איטלקית) · מוזמן ✓</b> · 7 סועדים (מתאים גם לצמחונים).</li>
+      <li><span class="time">20:30</span> <b>ארוחת ערב - <a href="https://www.google.com/maps/search/?api=1&query=La%20Fiorentina%20restaurant%2C%20Lisboa" target="_blank" rel="noopener">La Fiorentina</a> (איטלקית) · מוזמן ✓</b> · 7 סועדים (מתאים גם לצמחונים).</li>
     </ul>
-    <div class="note">⏱️ <b>משך רשמי ~9 שעות</b> (08:00–~17:00) — הזמנים לעיל <b>נדיבים בכוונה</b>; אם הכל זורם מהר יותר נחזור מוקדם, עדיף מאשר להרגיש בלחץ. הסדר עשוי להשתנות לפי חלונות הכניסה לארמונות. נשאר זמן למנוחה לפני ארוחת הערב.</div>
-    <div class="note">👟 הסיור כולל <b>הרבה הליכה, כולל עליות</b> — פחות מתאים למי שמתקשה בהליכה. אין אוכל/שתייה/עישון ברכב. ⚠️ <b>ביטול חינם עד 7.8 בשעה 08:00.</b> · מפעיל: ODYSSEY Tours (טל׳ +351 920 101 898). <b>8.8 היא שבת</b> — למי ששומר, אפשר במקום בוקר בבית הכנסת שערי תקווה ומנוחה בליסבון.</div>
+    <div class="note">⏱️ <b>משך רשמי ~9 שעות</b> (08:00–~17:00) - הזמנים לעיל <b>נדיבים בכוונה</b>; אם הכל זורם מהר יותר נחזור מוקדם, עדיף מאשר להרגיש בלחץ. הסדר עשוי להשתנות לפי חלונות הכניסה לארמונות. נשאר זמן למנוחה לפני ארוחת הערב.</div>
+    <div class="note">👟 הסיור כולל <b>הרבה הליכה, כולל עליות</b> - פחות מתאים למי שמתקשה בהליכה. אין אוכל/שתייה/עישון ברכב. ⚠️ <b>ביטול חינם עד 7.8 בשעה 08:00.</b> · מפעיל: ODYSSEY Tours (טל׳ +351 920 101 898). <b>8.8 היא שבת</b> - למי ששומר, אפשר במקום בוקר בבית הכנסת שערי תקווה ומנוחה בליסבון.</div>
   </div>
 
   <div class="day">
     <div class="day-head" id="d9"><div class="badge"><span class="d">9</span><span class="m">אוג׳ · א׳</span></div>
       <div class="day-title">עלייה לאונייה <span class="tag">יום קצר</span><small>צ׳ק־אין באונייה 12:00–12:30 · הפלגה 18:00</small></div></div>
     <ul>
-      <li><span class="time">בוקר</span> <b>בוקר צ׳יל</b> — ארוחת בוקר בכיף ובנחת במלון, בלי לחץ, ואריזה אחרונה.</li>
-      <li><span class="time">עד ~11:15</span> צ׳ק־אאוט מהמלון (עד 12:00), עם כל המזוודות. יום קצר — בעיקר צ׳ק־אאוט ונסיעה לאונייה.</li>
+      <li><span class="time">בוקר</span> <b>בוקר צ׳יל</b> - ארוחת בוקר בכיף ובנחת במלון, בלי לחץ, ואריזה אחרונה.</li>
+      <li><span class="time">עד ~11:15</span> צ׳ק־אאוט מהמלון (עד 12:00), עם כל המזוודות. יום קצר - בעיקר צ׳ק־אאוט ונסיעה לאונייה.</li>
       <li><span class="time">~11:15</span> <b>Bolt</b> מ־Inspira Liberdade ל<a href="https://www.google.com/maps/search/?api=1&query=Terminal%20de%20Cruzeiros%20de%20Lisboa%20Santa%20Apol%C3%B3nia" target="_blank" rel="noopener">טרמינל הקרוז (Santa Apolónia)</a>, ~10–15 דק׳ (ללא הזמנה מראש).</li>
       <li><span class="time">12:00–12:30</span> צ׳ק־אין ועלייה לאונייה. צהריים על הסיפון, מתמקמים, ונהנים מהאונייה עד ההפלגה ב־18:00.</li>
     </ul>
-    <div class="note">📍 <b>כתובת העלייה לאונייה:</b> <a href="https://www.google.com/maps/search/?api=1&query=Terminal%20de%20Cruzeiros%20de%20Lisboa%2C%20Av.%20Infante%20Dom%20Henrique%2C%201100-651%20Lisboa" target="_blank" rel="noopener">Terminal de Cruzeiros de Lisboa — Doca Jardim do Tabaco, Av. Infante Dom Henrique, 1100-651 Lisboa</a> · טל׳ +351 210 497 940.</div>
-    <div class="note">בלם ירד מהתוכנית בגלל הצ׳ק־אין המוקדם. אם בא לכם נגיעה אחרונה — קפה ו<b>פסטל דה נאטה</b> מהיר ליד המלון לפני היציאה.</div>
+    <div class="note">📍 <b>כתובת העלייה לאונייה:</b> <a href="https://www.google.com/maps/search/?api=1&query=Terminal%20de%20Cruzeiros%20de%20Lisboa%2C%20Av.%20Infante%20Dom%20Henrique%2C%201100-651%20Lisboa" target="_blank" rel="noopener">Terminal de Cruzeiros de Lisboa - Doca Jardim do Tabaco, Av. Infante Dom Henrique, 1100-651 Lisboa</a> · טל׳ +351 210 497 940.</div>
+    <div class="note">בלם ירד מהתוכנית בגלל הצ׳ק־אין המוקדם. אם בא לכם נגיעה אחרונה - קפה ו<b>פסטל דה נאטה</b> מהיר ליד המלון לפני היציאה.</div>
     <div class="rd">🍽️ ארוחת ערב ראשונה: <b>~19:30 באונייה</b> (לאחר ההפלגה מליסבון ב־18:00)</div>
   </div>
 
@@ -324,35 +332,35 @@
 
   <div class="day">
     <div class="day-head" id="d10"><div class="badge"><span class="d">10</span><span class="m">אוג׳ · ב׳</span></div>
-      <div class="day-title">פורטימאו — מערות בנאגיל <span class="tag">טבע</span><span class="tag">אקשן</span><small class="warn">נמל טנדר · יורדים ~09:30</small></div></div>
+      <div class="day-title">פורטימאו - מערות בנאגיל <span class="tag">טבע</span><span class="tag">אקשן</span><small class="warn">נמל טנדר · יורדים ~09:30</small></div></div>
     <ul>
-      <li><span class="time">08:00</span> ארוחת בוקר על הסיפון (Garden Café — פתוח מוקדם בימי נמל). לארוז: בגד ים, מגבת, כובע, קרם הגנה ומים.</li>
-      <li><span class="time">~08:15</span> <b>📋 משימת היום:</b> לגשת <b>מוקדם ללאונג׳ הטנדר ולתפוס מספר טנדר נמוך</b> — הסיור שלנו עצמאי (בלי עדיפות אוטומטית), וככה יורדים מהגלים הראשונים ומגיעים בנוחות ל־11:00.</li>
+      <li><span class="time">08:00</span> ארוחת בוקר על הסיפון (Garden Café - פתוח מוקדם בימי נמל). לארוז: בגד ים, מגבת, כובע, קרם הגנה ומים.</li>
+      <li><span class="time">~08:15</span> <b>📋 משימת היום:</b> לגשת <b>מוקדם ללאונג׳ הטנדר ולתפוס מספר טנדר נמוך</b> - הסיור שלנו עצמאי (בלי עדיפות אוטומטית), וככה יורדים מהגלים הראשונים ומגיעים בנוחות ל־11:00.</li>
       <li><span class="time">~09:30</span> <b>טנדר לחוף</b> אל <a href="https://www.google.com/maps/search/?api=1&query=Terminal%20de%20Cruzeiros%20de%20Portim%C3%A3o" target="_blank" rel="noopener">טרמינל הקרוז של פורטימאו</a> (גדה מערבית של נהר Arade) · ~10–15 דק׳ שיט טנדר.</li>
-      <li><span class="time">~09:50</span> מהטרמינל ל<a href="https://www.google.com/maps/search/?api=1&query=Marina%20de%20Portim%C3%A3o" target="_blank" rel="noopener">מרינה דה פורטימאו</a> — <b>נקודת המפגש של הסירה היא במרינה, לא בטרמינל</b> (~1.2 ק״מ דרומה): הליכה שטוחה ~15 דק׳ על טיילת הנהר, או טקסי/Bolt ~5 דק׳.</li>
-      <li><span class="time">11:00</span> <b>שיט למערות בנאגיל — מוזמן ✓</b> (Royal Nautic · 7 נפשות). יוצא מהקיוסק במרינה, <b>צ׳ק־אין 10:30</b>. ~2 שעות לאורך הצוקים והמערות (בנאגיל, Marinha) כולל <b>כניסה לתוך מערת בנאגיל ועצירת שחייה</b>. ביטול חינם עד 9.8.</li>
-      <li><span class="time">~13:00–16:45</span> אחרי השיט — <b>מתייבשים ונהנים מפורטימאו:</b> חוף <a href="https://www.google.com/maps/search/?api=1&query=Praia%20da%20Rocha%2C%20Portim%C3%A3o" target="_blank" rel="noopener">פראיה דה רוקה</a> (צמוד למרינה — צוקים זהובים) או שיטוט בעיר העתיקה (Rua do Comércio, כיכר 1º de Dezembro). נשנוש על הדרך — לא ארוחה מסודרת.</li>
-      <li><span class="time">~16:45</span> חזרה לטרמינל וטנדר לאונייה — <b>יש זמן להתקלח בכיף</b> לפני ההפלגה ב־18:00.</li>
+      <li><span class="time">~09:50</span> מהטרמינל ל<a href="https://www.google.com/maps/search/?api=1&query=Marina%20de%20Portim%C3%A3o" target="_blank" rel="noopener">מרינה דה פורטימאו</a> - <b>נקודת המפגש של הסירה היא במרינה, לא בטרמינל</b> (~1.2 ק״מ דרומה): הליכה שטוחה ~15 דק׳ על טיילת הנהר, או טקסי/Bolt ~5 דק׳.</li>
+      <li><span class="time">11:00</span> <b>שיט למערות בנאגיל - מוזמן ✓</b> (Royal Nautic · 7 נפשות). יוצא מהקיוסק במרינה, <b>צ׳ק־אין 10:30</b>. ~2 שעות לאורך הצוקים והמערות (בנאגיל, Marinha) כולל <b>כניסה לתוך מערת בנאגיל ועצירת שחייה</b>. ביטול חינם עד 9.8.</li>
+      <li><span class="time">~13:00–16:45</span> אחרי השיט - <b>מתייבשים ונהנים מפורטימאו:</b> חוף <a href="https://www.google.com/maps/search/?api=1&query=Praia%20da%20Rocha%2C%20Portim%C3%A3o" target="_blank" rel="noopener">פראיה דה רוקה</a> (צמוד למרינה - צוקים זהובים) או שיטוט בעיר העתיקה (Rua do Comércio, כיכר 1º de Dezembro). נשנוש על הדרך - לא ארוחה מסודרת.</li>
+      <li><span class="time">~16:45</span> חזרה לטרמינל וטנדר לאונייה - <b>יש זמן להתקלח בכיף</b> לפני ההפלגה ב־18:00.</li>
     </ul>
-    <div class="note">💡 <b>למה קודם השיט ואז העיר?</b> האור שחודר למערת בנאגיל הכי יפה ~10:00–12:00 והים רגוע יותר בבוקר — לכן פותחים בשיט ומשאירים את העיר/החוף לאחה״צ. אין צורך בסיור מודרך נפרד: ההליכה מהטרמינל למרינה עוברת ממילא על טיילת הנהר. מי שרוצה להיכנס פנימה למערה — יש קומבו קטמרן+קיאק.</div>
-    <div class="note">👟 <b>נמל טנדר — סדר הירידה:</b> ראשונים יורדים בעלי <b>טיול רשמי של NCL</b>, אחריהם Priority Access/סוויטות, ואז שאר הנוסעים לפי <b>כרטיס טנדר</b> (לוקחים מספר בלאונג׳ ומחכים שיקראו לקבוצה). אחרי הגל הראשון (~09:00–09:30) עוברים ל<b>"טנדר פתוח"</b> — יורדים חופשי בלי כרטיס. הסיור שלנו <b>עצמאי (לא של NCL) → אין עדיפות אוטומטית</b>: כדאי לגשת ללאונג׳ מוקדם ולתפוס מספר נמוך. חזרה: בלי כרטיס אבל בתור; טנדר אחרון ~30–45 דק׳ לפני ההפלגה. ⚠️ <b>לוודא קרוב לתאריך שפורטימאו נשארה בלו״ז ההפלגה שלנו</b> (ל־NCL היו שינויי נמלים ב־2026).</div>
+    <div class="note">💡 <b>למה קודם השיט ואז העיר?</b> האור שחודר למערת בנאגיל הכי יפה ~10:00–12:00 והים רגוע יותר בבוקר - לכן פותחים בשיט ומשאירים את העיר/החוף לאחה״צ. אין צורך בסיור מודרך נפרד: ההליכה מהטרמינל למרינה עוברת ממילא על טיילת הנהר. מי שרוצה להיכנס פנימה למערה - יש קומבו קטמרן+קיאק.</div>
+    <div class="note">👟 <b>נמל טנדר - סדר הירידה:</b> ראשונים יורדים בעלי <b>טיול רשמי של NCL</b>, אחריהם Priority Access/סוויטות, ואז שאר הנוסעים לפי <b>כרטיס טנדר</b> (לוקחים מספר בלאונג׳ ומחכים שיקראו לקבוצה). אחרי הגל הראשון (~09:00–09:30) עוברים ל<b>"טנדר פתוח"</b> - יורדים חופשי בלי כרטיס. הסיור שלנו <b>עצמאי (לא של NCL) → אין עדיפות אוטומטית</b>: כדאי לגשת ללאונג׳ מוקדם ולתפוס מספר נמוך. חזרה: בלי כרטיס אבל בתור; טנדר אחרון ~30–45 דק׳ לפני ההפלגה. ⚠️ <b>לוודא קרוב לתאריך שפורטימאו נשארה בלו״ז ההפלגה שלנו</b> (ל־NCL היו שינויי נמלים ב־2026).</div>
     <div class="rd">🕐 חזרה לאונייה: ~17:15 &nbsp;·&nbsp; 🍽️ ארוחת ערב: <b>~19:00 באונייה</b> (אחרי ההפלגה ב־18:00)</div>
     <p class="portlink">מידע: <a href="https://www.ncl.com/port-of-call/cruises-to-portimao" target="_blank" rel="noopener">NCL · פורטימאו</a> · <a href="https://www.cleancruising.com.au/port/portimao" target="_blank" rel="noopener">מידע על הנמל</a></p>
   </div>
 
   <div class="day">
     <div class="day-head" id="d11"><div class="badge"><span class="d">11</span><span class="m">אוג׳ · ג׳</span></div>
-      <div class="day-title">קאדיס — עיר עתיקה ואוכל <span class="tag">אוכל</span><span class="tag">היסטוריה</span><small>יום רגוע · יורדים 10:00</small></div></div>
+      <div class="day-title">קאדיס - עיר עתיקה ואוכל <span class="tag">אוכל</span><span class="tag">היסטוריה</span><small>יום רגוע · יורדים 10:00</small></div></div>
     <ul>
       <li><span class="time">~08:30</span> ארוחת בוקר על הסיפון בנחת.</li>
-      <li><span class="time">10:00</span> יורדים <b>ישר במרכז העיר</b> — האונייה עוגנת ב־Muelle Ciudad, ~5–10 דק׳ הליכה לעיר העתיקה (בלי הסעות). מתחילים ב<a href="https://www.google.com/maps/search/?api=1&query=Plaza%20San%20Juan%20de%20Dios%2C%20C%C3%A1diz" target="_blank" rel="noopener">כיכר סן חואן דה דיוס</a>.</li>
-      <li><span class="time">בוקר</span> <b>קתדרלת קאדיס</b> (כיפה זהובה, אפשר לעלות למגדל) ו<a href="https://www.google.com/maps/search/?api=1&query=Torre%20Tavira%2C%20C%C3%A1diz" target="_blank" rel="noopener">טורה טאבירה</a> — מגדל תצפית עם קמרה אובסקורה והנוף הכי יפה על העיר. אחר כך סמטאות העיר העתיקה וכיכר הפרחים.</li>
-      <li><span class="time">אמצע היום</span> <b><a href="https://www.google.com/maps/search/?api=1&query=Mercado%20Central%20de%20Abastos%2C%20C%C3%A1diz" target="_blank" rel="noopener">מרקדו סנטרל</a></b> — שוק אוכל מ־1838; מקום מעולה <b>לנשנש טפאס וטעימות תוך כדי</b> (לא ארוחה מסודרת — הארוחה הגדולה מחכה על הסיפון). דגים טריים והרבה אופציות צמחוניות.</li>
+      <li><span class="time">10:00</span> יורדים <b>ישר במרכז העיר</b> - האונייה עוגנת ב־Muelle Ciudad, ~5–10 דק׳ הליכה לעיר העתיקה (בלי הסעות). מתחילים ב<a href="https://www.google.com/maps/search/?api=1&query=Plaza%20San%20Juan%20de%20Dios%2C%20C%C3%A1diz" target="_blank" rel="noopener">כיכר סן חואן דה דיוס</a>.</li>
+      <li><span class="time">בוקר</span> <b>קתדרלת קאדיס</b> (כיפה זהובה, אפשר לעלות למגדל) ו<a href="https://www.google.com/maps/search/?api=1&query=Torre%20Tavira%2C%20C%C3%A1diz" target="_blank" rel="noopener">טורה טאבירה</a> - מגדל תצפית עם קמרה אובסקורה והנוף הכי יפה על העיר. אחר כך סמטאות העיר העתיקה וכיכר הפרחים.</li>
+      <li><span class="time">אמצע היום</span> <b><a href="https://www.google.com/maps/search/?api=1&query=Mercado%20Central%20de%20Abastos%2C%20C%C3%A1diz" target="_blank" rel="noopener">מרקדו סנטרל</a></b> - שוק אוכל מ־1838; מקום מעולה <b>לנשנש טפאס וטעימות תוך כדי</b> (לא ארוחה מסודרת - הארוחה הגדולה מחכה על הסיפון). דגים טריים והרבה אופציות צמחוניות.</li>
       <li><span class="time">אחה״צ</span> <b>גמיש:</b> חוף <a href="https://www.google.com/maps/search/?api=1&query=Playa%20de%20la%20Caleta%2C%20C%C3%A1diz" target="_blank" rel="noopener">לה קלטה</a> וטירת סן סבסטיאן, פארק חנוב (Genovés), ורובע La Viña. או קניות סביב Calle Ancha.</li>
       <li><span class="time">~17:45</span> חזרה לאונייה (דקות ספורות הליכה).</li>
     </ul>
-    <div class="note">🍤 <b>מנות מקומיות:</b> pescaíto frito (דגים מטוגנים), tortillitas de camarones (לביבות שרימפס), atún de almadraba (טונה). <b>בלי סביליה</b> — חוסכים ~3.5 שעות נסיעה ביום שלא ״הגדול״.</div>
-    <div class="shop">🛍️ <b>קניות:</b> Calle Ancha ורחובות העיר העתיקה — אופנה ספרדית, מזכרות ומעדני שוק (מוחמה/טונה, שרי).</div>
+    <div class="note">🍤 <b>מנות מקומיות:</b> pescaíto frito (דגים מטוגנים), tortillitas de camarones (לביבות שרימפס), atún de almadraba (טונה). <b>בלי סביליה</b> - חוסכים ~3.5 שעות נסיעה ביום שלא ״הגדול״.</div>
+    <div class="shop">🛍️ <b>קניות:</b> Calle Ancha ורחובות העיר העתיקה - אופנה ספרדית, מזכרות ומעדני שוק (מוחמה/טונה, שרי).</div>
     <p class="portlink">מידע: <a href="https://www.cleancruising.com.au/port/cadiz" target="_blank" rel="noopener">קאדיס</a></p>
     <div class="rd">🕐 חזרה לאונייה: ~18:15 &nbsp;·&nbsp; 🍽️ ארוחת ערב: <b>~19:30 באונייה</b> (אחרי ההפלגה ב־19:00)</div>
   </div>
@@ -361,44 +369,52 @@
     <div class="day-head" id="d12"><div class="badge" style="background:var(--sea)"><span class="d">12</span><span class="m">אוג׳ · ד׳</span></div>
       <div class="day-title">גרנדה (ממוטריל) <span class="tag">אלהמברה</span><span class="tag">היסטוריה</span><small>ירידה 10:00 · הפלגה 22:00</small></div></div>
     <ul>
-      <li><b>הסעה מ/אל מוטריל — טרנספר פרטי בשני הכיוונים:</b> איסוף בנמל ~10:00, ו<b>חזרה מגרנדה ~20:00</b> (חובה!). ~50–75 דק׳ לכיוון. 🚫 <b>אין רכבת</b>, ואוטובוס ALSA לא מומלץ לחזרה (יוצא מתחנה ולא מהנמל, מסוכן מול הפלגה 22:00). לא Bolt — כיסוי דליל במוטריל.</li>
-      <li><b>תנועה בתוך גרנדה — מיניבוסים ייעודיים:</b> <b>C30/C32</b> (אלהמברה↔מרכז) ו-<b>C31/C32</b> (מרכז↔אלבייסין/סן ניקולס), כל ~10–12 דק׳, ~€1.40. גיבוי: 2 טקסי קצרים. <b>לא צריך נהג צמוד</b> — הקווים בנויים בדיוק לזה, ולרכב פרטי אסור להיכנס לסמטאות האלבייסין.</li>
-      <li><span class="time">~11:30</span> <b>טיול רגוע במרכז העתיק</b> — הקתדרלה, אלקאיסריה (שוק המשי), ושכונת <b>ריאלחו</b> — הרובע היהודי הישן (גַרנַטַה אל־יַהוד). הכל שטוח וקרוב.</li>
-      <li><span class="time">צהריים</span> <b>טפאס</b> (נשנוש, לא ארוחה מסודרת) — בגרנדה כל משקה מגיע עם טפא <b>חינם</b>. המלצה: <b><a href="https://www.google.com/maps/search/?api=1&query=Bodegas%20Casta%C3%B1eda%2C%20Granada" target="_blank" rel="noopener">Bodegas Castañeda</a></b> (מ־1927, ליד הקתדרלה, מנות שיתוף). לצמחונים — לומר בהזמנה; או <a href="https://www.google.com/maps/search/?api=1&query=Hicuri%20Art%20Vegan%2C%20Granada" target="_blank" rel="noopener">Hicuri Art Vegan</a> (ריאלחו, טבעוני).</li>
-      <li><span class="time">~13:00</span> <b>אלהמברה</b> — ארמונות הנאסריים + גני גנרליף + אלקסבה. כרטיס <b>General €22.27</b>. <b>⚠️ חלון נאסריים מוקדם (~13:00–14:00)</b> — כדי להספיק למופע ב-17:30.</li>
-      <li><span class="time">17:30</span> להגיע ל־<b><a href="https://www.google.com/maps/search/?api=1&query=Jardines%20de%20Zoraya%2C%20Calle%20Panaderos%2032%2C%20Granada" target="_blank" rel="noopener">Jardines de Zoraya</a></b> (Calle Panaderos 32, אלבייסין — 2 דק׳ מסן ניקולס).</li>
-      <li><span class="time">18:00</span> <b>מופע פלמנקו — מוזמן ✓</b> · טבלאו אינטימי (~שעה): גיטרה, 2 זמרים ו-2 רקדנים. ביטול חינם עד 11.8.</li>
-      <li><span class="time">~19:00</span> אחרי המופע — סטרול קצר באלבייסין ועלייה למצפור <b>סן ניקולס</b> לנוף הקלאסי על האלהמברה באור אחה״צ (השקיעה עצמה ~21:05 — לא נספיק, ובלי לחץ).</li>
-      <li><span class="time">~19:45</span> ירידה לנקודת האיסוף (פלאסה נואבה / פאסאו דה לוס טריסטס — ואן לא נכנס לסמטאות האלבייסין) → יציאה למוטריל ~20:00.</li>
+      <li><b>הסעה מ/אל מוטריל - טרנספר פרטי בשני הכיוונים:</b> <span class="tag" style="background:var(--alert);color:#fff">⚠️ טרם הוזמן</span> איסוף בנמל ~10:00, ו<b>חזרה מגרנדה ~20:00</b> (חובה!). ~50–75 דק׳ לכיוון. 🚫 <b>אין רכבת</b>, ואוטובוס ALSA לא מומלץ לחזרה (יוצא מתחנה ולא מהנמל, מסוכן מול הפלגה 22:00). לא Bolt - כיסוי דליל במוטריל.</li>
+      <li><b>תנועה בתוך גרנדה - מיניבוסים ייעודיים:</b> <b>C30/C32</b> (אלהמברה↔מרכז) ו-<b>C31/C32</b> (מרכז↔אלבייסין/סן ניקולס), כל ~10–12 דק׳, ~€1.40. גיבוי: 2 טקסי קצרים. <b>לא צריך נהג צמוד</b> - הקווים בנויים בדיוק לזה, ולרכב פרטי אסור להיכנס לסמטאות האלבייסין.</li>
+      <li><span class="time">~11:30</span> <b>טיול רגוע במרכז העתיק</b> - הקתדרלה, אלקאיסריה (שוק המשי), ושכונת <b>ריאלחו</b> - הרובע היהודי הישן (גַרנַטַה אל־יַהוד). הכל שטוח וקרוב.</li>
+      <li><span class="time">צהריים</span> <b>טפאס</b> (נשנוש, לא ארוחה מסודרת) - בגרנדה כל משקה מגיע עם טפא <b>חינם</b>. המלצה: <b><a href="https://www.google.com/maps/search/?api=1&query=Bodegas%20Casta%C3%B1eda%2C%20Granada" target="_blank" rel="noopener">Bodegas Castañeda</a></b> (מ־1927, ליד הקתדרלה, מנות שיתוף). לצמחונים - לומר בהזמנה; או <a href="https://www.google.com/maps/search/?api=1&query=Hicuri%20Art%20Vegan%2C%20Granada" target="_blank" rel="noopener">Hicuri Art Vegan</a> (ריאלחו, טבעוני).</li>
+      <li><span class="time">~13:00</span> <b>אלהמברה</b> <span class="tag" style="background:var(--alert);color:#fff">⚠️ טרם הוזמן</span> - ארמונות הנאסריים + גני גנרליף + אלקסבה. כרטיס <b>General €22.27</b>. <b>⚠️ חלון נאסריים מוקדם (~13:00–14:00)</b> - כדי להספיק למופע ב-17:30.</li>
+      <li><span class="time">17:30</span> להגיע ל־<b><a href="https://www.google.com/maps/search/?api=1&query=Jardines%20de%20Zoraya%2C%20Calle%20Panaderos%2032%2C%20Granada" target="_blank" rel="noopener">Jardines de Zoraya</a></b> (Calle Panaderos 32, אלבייסין - 2 דק׳ מסן ניקולס).</li>
+      <li><span class="time">18:00</span> <b>מופע פלמנקו - מוזמן ✓</b> · טבלאו אינטימי (~שעה): גיטרה, 2 זמרים ו-2 רקדנים. ביטול חינם עד 11.8.</li>
+      <li><span class="time">~19:00</span> אחרי המופע - סטרול קצר באלבייסין ועלייה למצפור <b>סן ניקולס</b> לנוף הקלאסי על האלהמברה באור אחה״צ (השקיעה עצמה ~21:05 - לא נספיק, ובלי לחץ).</li>
+      <li><span class="time">~19:45</span> ירידה לנקודת האיסוף (פלאסה נואבה / פאסאו דה לוס טריסטס - ואן לא נכנס לסמטאות האלבייסין) → יציאה למוטריל ~20:00.</li>
     </ul>
-    <div class="note" style="border-inline-start:3px solid var(--alert)">🔔 <b>עדיין להזמין (דחוף!):</b> (1) <b>כרטיסי אלהמברה</b> — כרטיס <b>General €22.27</b> ב-tickets.alhambra-patronato.es, חלון נאסריים <b>~13:00–14:00</b>. אוזל מהר באוגוסט — לקנות מיד. (2) <b>הסעה פרטית הלוך-חזור</b> ממוטריל (מיניבוס ל-7 — Kiwitaxi / Daytrip / monTransport): איסוף בנמל ~10:00, חזרה מגרנדה ~20:00. ✓ מופע פלמנקו כבר מוזמן.</div>
+    <div class="note" style="border-inline-start:3px solid var(--alert)">🔔 <b>עדיין להזמין (דחוף!):</b> (1) <b>כרטיסי אלהמברה</b> - כרטיס <b>General €22.27</b> ב-tickets.alhambra-patronato.es, חלון נאסריים <b>~13:00–14:00</b>. אוזל מהר באוגוסט - לקנות מיד. (2) <b>הסעה פרטית הלוך-חזור</b> ממוטריל (מיניבוס ל-7 - Kiwitaxi / Daytrip / monTransport): איסוף בנמל ~10:00, חזרה מגרנדה ~20:00. ✓ מופע פלמנקו כבר מוזמן.</div>
     <p class="portlink">הזמנות: <a href="https://www.alhambra-patronato.es" target="_blank" rel="noopener">כרטיסי אלהמברה</a> · <a href="https://andalusiatraveltour.com/alhambra-tours-from-motril/" target="_blank" rel="noopener">הסעות/סיור מהנמל</a> · <a href="https://www.cleancruising.com.au/port/motril" target="_blank" rel="noopener">מידע על הנמל</a></p>
-    <div class="note">הרבה הליכה בשמש — כובע, מים ונעליים נוחות.</div>
-    <div class="shop">🛍️ <b>קניות (אם נשאר זמן):</b> <b>אלקאיסריה</b> — שוק המשי הישן ליד הקתדרלה: קרמיקה, טאראסאה (עבודות עץ מעוטרות), תה ותבלינים. מרכזי, אפשר לעבור בדרך.</div>
+    <div class="note">הרבה הליכה בשמש - כובע, מים ונעליים נוחות.</div>
+    <div class="shop">🛍️ <b>קניות (אם נשאר זמן):</b> <b>אלקאיסריה</b> - שוק המשי הישן ליד הקתדרלה: קרמיקה, טאראסאה (עבודות עץ מעוטרות), תה ותבלינים. מרכזי, אפשר לעבור בדרך.</div>
     <div class="rd">🕐 יוצאים מהעיר ~20:00 · חזרה לאונייה ~21:15 (הפלגה 22:00) &nbsp;·&nbsp; 🍽️ ארוחת ערב: <b>טפאס בגרנדה ~18:30–19:30</b> (האוכל באונייה נסגר ב־21:30)</div>
   </div>
 
-  <div class="day wip">
+  <div class="day">
     <div class="day-head" id="d13"><div class="badge" style="background:var(--alert)"><span class="d">13</span><span class="m">אוג׳ · ה׳</span></div>
-      <div class="day-title">גיברלטר <span class="wip-tag">🚧 בבנייה</span><span class="tag">אקשן</span><small class="warn">לרדת מוקדם ~07:45 — חצי יום</small></div></div>
+      <div class="day-title">גיברלטר - הסלע במחצית יום <span class="tag">✓ מוזמן</span><span class="tag">אקשן</span><span class="tag">טבע</span><small class="warn">יום קצר · לרדת ~07:45 · All Aboard ~12:15</small></div></div>
     <ul>
-      <li><b>רכבל אל הסלע</b> — נוף על מיצר גיברלטר.</li>
-      <li><b>קופי הברברי החופשיים</b> — היילייט לצעירים (לא להאכיל, לשמור על תיקים).</li>
-      <li><b>מערת סנט מייקל</b> ונקודת אירופה. סיור טקסי מהמזח מכסה הכל בזמן הקצר.</li>
-      <li><b>יהדות:</b> לגיברלטר קהילה יהודית ותיקה — אפשר לעבור ליד <b>בית הכנסת הגדול</b> (Great Synagogue, משנת 1724) באזור Main Street, ויש גם אוכל כשר.</li>
+      <li><span class="time">07:15</span> ארוחת בוקר מוקדמת על הסיפון (Garden Café). יום קצר - יורדים מהראשונים. לקחת: כובע, מים, נעליים נוחות, מעיל דק לפסגה (רוח).</li>
+      <li><span class="time">~07:45</span> <b>יורדים מהאונייה</b> ב<a href="https://www.google.com/maps/search/?api=1&query=Gibraltar%20Cruise%20Terminal%2C%20Western%20Arm" target="_blank" rel="noopener">טרמינל הקרוז (Western Arm / North Mole)</a>. גיברלטר בריטית - <b>דרכון ביד</b>, אבל אין ביקורת גבול (מגיעים מהים ישר לגיב׳).</li>
+      <li><span class="time">08:30</span> <b>מפגש עם הסיור המוזמן</b> בטרמינל - <b><a href="https://www.viator.com/tours/Gibraltar/port-rock-tour-cruise-passengers/d50813-15610P24" target="_blank" rel="noopener">Port Rock Tour</a> (Blands Travel) · מוזמן ✓</b> · סיור שיתופי בקבוצה קטנה, ~1:45 שעות, <b>כולל כניסה לשמורת הטבע</b>. מחכה לכם נציג עם שלט <b>"BG port"</b> ביציאה מהאונייה. ביטול חינם עד 12.8.</li>
+      <li><span class="time">08:30–09:15</span> <a href="https://www.google.com/maps/search/?api=1&query=Europa%20Point%2C%20Gibraltar" target="_blank" rel="noopener">נקודת אירופה</a> - הקצה הדרומי מול המיצר (רואים את מרוקו וספרד באור בוקר), המגדלור והמסגד. פתוח תמיד - לכן פותחים כאן, לפני שהשמורה נפתחת ב-09:30.</li>
+      <li><span class="time">~09:30</span> <b>שמורת הטבע (נפתחת 09:30):</b>
+        <b><a href="https://www.google.com/maps/search/?api=1&query=Apes%27%20Den%2C%20Gibraltar" target="_blank" rel="noopener">מאורת הקופים</a></b> - קופי הברברי החופשיים (<span class="warn">לא להאכיל, לא לגעת, לשמור על תיקים ומשקפיים</span>) ·
+        <a href="https://www.google.com/maps/search/?api=1&query=St%20Michael%27s%20Cave%2C%20Gibraltar" target="_blank" rel="noopener">מערת סנט מייקל</a> (מערת נטיפים עם תאורה).</li>
+      <li><span class="time">~10:15</span> הסיור מסתיים ומוריד ב<a href="https://www.google.com/maps/search/?api=1&query=Casemates%20Square%2C%20Gibraltar" target="_blank" rel="noopener">כיכר Casemates</a> (הקצה הצפוני של Main Street) - משם רגלית.</li>
+      <li><span class="time">10:15–11:15</span> <b>Main Street רגלית מ-Casemates לכיוון הנמל:</b> שופינג פטור ממע״מ (פירוט למטה) ומעבר ליד <b><a href="https://www.google.com/maps/search/?api=1&query=Great%20Synagogue%20Gibraltar%2C%20Line%20Wall%20Road" target="_blank" rel="noopener">בית הכנסת הגדול</a></b> (משנת 1724, מהעתיקים באירופה) - לגיברלטר קהילה יהודית ותיקה ואוכל כשר.</li>
+      <li><span class="time">~11:30</span> <b>חזרה לטרמינל</b> (~15 דק׳ הליכה מ-Casemates, או מונית קצרה). הרבה מרווח ל-All Aboard ~12:15.</li>
     </ul>
-    <p class="portlink">דרכון ביד (טריטוריה בריטית) · <a href="https://www.cleancruising.com.au/port/gibraltar" target="_blank" rel="noopener">מידע על הנמל</a></p>
-    <div class="shop">🛍️ <b>קניות — Main Street:</b> רחוב הקניות הראשי, <b>פטור ממע״מ</b> (בשמים, אלכוהול, טבק, אלקטרוניקה — קלאסי לקרוז). נמצא <b>בדרך חזרה מהסלע לנמל</b>, אז קל לשלב ~30–45 דק׳ גם ביום הקצר — לסיים את סיור הטקסי עד ~11:00 כדי להספיק.</div>
-    <div class="rd">🕐 חזרה לאונייה: ~12:00 (חצי יום) &nbsp;·&nbsp; 🍽️ ארוחת ערב: <b>~19:30 באונייה</b></div>
+    <div class="note">🎟️ <b>כרטיסים:</b> ה-<b>Port Rock Tour כולל את הכניסה לשמורת הטבע</b> (קופים + מערת סנט מייקל) - אין צורך לקנות כרטיסים בנפרד. <b>נקודת אירופה, Main Street ובית הכנסת - חינם.</b> 💷 <b>מטבע:</b> ליש״ט/פאונד גיברלטרי; יורו מתקבל בשער פחות טוב - כרטיס אשראי עדיף.</div>
+    <div class="note">🚕 <b>חלופה זולה ביום עצמו:</b> ברציף הנמל ממתינים נהגי סיור - 7 נפשות ממלאים ואן, אפשר לנהל מחיר במקום (משלמים רק אם מפליגים). הסיור המוזמן הוא רשת ביטחון עם ביטול חינם.</div>
+    <p class="portlink">מידע: <a href="https://www.cleancruising.com.au/port/gibraltar" target="_blank" rel="noopener">גיברלטר</a></p>
+    <div class="shop">🛍️ <b>קניות - Main Street:</b> רחוב הקניות הראשי, <b>פטור ממע״מ</b> (בשמים, אלכוהול, טבק, אלקטרוניקה - קלאסי לקרוז). ממילא בדרך חזרה מ-Casemates לנמל - ~45 דק׳ בנחת.</div>
+    <div class="rd">🕐 חזרה לאונייה: ~11:30 (All Aboard ~12:15, הפלגה 13:00) &nbsp;·&nbsp; 🍽️ ארוחת ערב: <b>~19:30 באונייה</b></div>
   </div>
 
   <div class="day wip">
     <div class="day-head" id="d14"><div class="badge"><span class="d">14</span><span class="m">אוג׳ · ו׳</span></div>
       <div class="day-title">איביזה <span class="wip-tag">🚧 בבנייה</span><span class="tag">בילוי</span><small>מגיעים 12:30 · שקיעה ודינר</small></div></div>
     <ul>
-      <li><b>דאלט וילה</b> — העיר העתיקה המבוצרת (יונסק״ו) בשעות אחה״צ הנעימות.</li>
+      <li><b>דאלט וילה</b> - העיר העתיקה המבוצרת (יונסק״ו) בשעות אחה״צ הנעימות.</li>
       <li>זמן חוף קצר / שוק ההיפים, ואז <b>שקיעה + ארוחת ערב</b>.</li>
-      <li>ההפלגה 22:30 — זה שקיעה־ודינר, לא קלאבינג.</li>
+      <li>ההפלגה 22:30 - זה שקיעה־ודינר, לא קלאבינג.</li>
     </ul>
     <p class="portlink">מידע: <a href="https://www.cleancruising.com.au/port/ibiza-town" target="_blank" rel="noopener">איביזה</a></p>
     <div class="rd">🕐 חזרה לאונייה: ~21:30 &nbsp;·&nbsp; 🍽️ ארוחת ערב: <b>~19:30–20:45 בדאלט וילה</b> (שקיעה ודינר בעיר העתיקה)</div>
@@ -408,12 +424,12 @@
     <div class="day-head" id="d15"><div class="badge"><span class="d">15</span><span class="m">אוג׳ · ש׳</span></div>
       <div class="day-title">פלמה דה מיורקה <span class="wip-tag">🚧 בבנייה</span><span class="tag">טבע</span><small>רכבת סולייר / עיר עתיקה</small></div></div>
     <ul>
-      <li><b>לסולייר (טבע):</b> רדו ~08:30 — <b>רכבת סולייר</b> העתיקה דרך ההרים + טרמוואי לחוף. לוחות זמנים דלילים.</li>
-      <li><b>לעיר (רגוע):</b> 10:00 מצוין — קתדרלת La Seu מול הים, עיר עתיקה, ושוק לוליבר.</li>
-      <li><b>יהדות:</b> ה<b>קאל</b> — הרובע היהודי הישן של פלמה, וסיפור ה<b>״צ׳ואטות״</b> (צאצאי היהודים שהומרו בכפייה). שילוב טבעי בשיטוט בעיר העתיקה.</li>
+      <li><b>לסולייר (טבע):</b> רדו ~08:30 - <b>רכבת סולייר</b> העתיקה דרך ההרים + טרמוואי לחוף. לוחות זמנים דלילים.</li>
+      <li><b>לעיר (רגוע):</b> 10:00 מצוין - קתדרלת La Seu מול הים, עיר עתיקה, ושוק לוליבר.</li>
+      <li><b>יהדות:</b> ה<b>קאל</b> - הרובע היהודי הישן של פלמה, וסיפור ה<b>״צ׳ואטות״</b> (צאצאי היהודים שהומרו בכפייה). שילוב טבעי בשיטוט בעיר העתיקה.</li>
     </ul>
     <p class="portlink">מידע: <a href="https://www.cleancruising.com.au/port/palma-de-mallorca" target="_blank" rel="noopener">פלמה</a></p>
-    <div class="shop">🛍️ <b>קניות (~שעה ב-Passeig del Born):</b> <b>פנינות מיורקה</b> (Majorica) — מקומי ומפורסם, לצד מוצרי עור ומותגים ספרדיים ב־<b>Passeig del Born</b> ובעיר העתיקה. משתלב בשיטוט בעיר.</div>
+    <div class="shop">🛍️ <b>קניות (~שעה ב-Passeig del Born):</b> <b>פנינות מיורקה</b> (Majorica) - מקומי ומפורסם, לצד מוצרי עור ומותגים ספרדיים ב־<b>Passeig del Born</b> ובעיר העתיקה. משתלב בשיטוט בעיר.</div>
     <div class="rd">🕐 חזרה לאונייה: ~17:15 &nbsp;·&nbsp; 🍽️ ארוחת ערב: <b>~19:00 באונייה</b> (אחרי ההפלגה ב־18:00)</div>
   </div>
 
@@ -426,23 +442,23 @@
       <div class="day-title">היום הגדול בברצלונה <span class="wip-tag">🚧 בבנייה</span><span class="tag">אוכל</span><span class="tag">אקשן</span><small>גאודי + שוק + שקיעה</small></div></div>
     <ul>
       <li><span class="time">~08:30</span> ירידה, הפקדת מזוודות במלון.</li>
-      <li><span class="time">~10:00</span> <b>סגרדה פמיליה — מבחוץ</b>: הקפה סביב הכנסייה, תמונה מהפארק (Plaça de Gaudí) עם ההשתקפות במים, וסיפור המבנה של גאודי. בלי כניסה בתשלום.</li>
-      <li><span class="time">~12:30</span> שדרת <b>Passeig de Gràcia</b> — קאסה בטליו ולה פדררה (מבחוץ) <b>+ זמן קניות</b> (מותגים ואופנה לאורך השדרה).</li>
-      <li><span class="time">~14:00</span> צהריים — טפאס בגראסיה או אל בורן (הרבה צמחוני).</li>
-      <li><span class="time">אחה״צ</span> הרובע הגותי — כולל <b>אל קאל</b>, הרובע היהודי הימי־ביניימי, ו<b>הסינגוגה מאיור</b> (מבתי הכנסת העתיקים באירופה, כיום מוזיאון קטן), הטיילת <a href="https://www.google.com/maps/search/?api=1&query=La%20Rambla%2C%20Barcelona" target="_blank" rel="noopener">לה רמבלה</a> ו<a href="https://www.google.com/maps/search/?api=1&query=Mercat%20de%20la%20Boqueria%2C%20Barcelona" target="_blank" rel="noopener">שוק לה בוקריה</a>, עד <a href="https://www.google.com/maps/search/?api=1&query=Pla%C3%A7a%20de%20Catalunya%2C%20Barcelona" target="_blank" rel="noopener">כיכר קטלוניה (Plaça de Catalunya)</a>.</li>
-      <li><span class="time">~20:00</span> עולים ל<b>בונקרס דל כרמל</b> לשקיעה — הנוף הכי יפה על העיר (השקיעה באוגוסט בסביבות <b>20:25</b>).</li>
-      <li><span class="time">ערב</span> מזרקת מונז׳ואיק — <span class="warn">בדקו לוח זמנים</span> (בקיץ בד״כ ה׳–א׳). אם לא פועל: דינר + בילוי בגראסיה.</li>
+      <li><span class="time">~10:00</span> <b>סגרדה פמיליה - מבחוץ</b>: הקפה סביב הכנסייה, תמונה מהפארק (Plaça de Gaudí) עם ההשתקפות במים, וסיפור המבנה של גאודי. בלי כניסה בתשלום.</li>
+      <li><span class="time">~12:30</span> שדרת <b>Passeig de Gràcia</b> - קאסה בטליו ולה פדררה (מבחוץ) <b>+ זמן קניות</b> (מותגים ואופנה לאורך השדרה).</li>
+      <li><span class="time">~14:00</span> צהריים - טפאס בגראסיה או אל בורן (הרבה צמחוני).</li>
+      <li><span class="time">אחה״צ</span> הרובע הגותי - כולל <b>אל קאל</b>, הרובע היהודי הימי־ביניימי, ו<b>הסינגוגה מאיור</b> (מבתי הכנסת העתיקים באירופה, כיום מוזיאון קטן), הטיילת <a href="https://www.google.com/maps/search/?api=1&query=La%20Rambla%2C%20Barcelona" target="_blank" rel="noopener">לה רמבלה</a> ו<a href="https://www.google.com/maps/search/?api=1&query=Mercat%20de%20la%20Boqueria%2C%20Barcelona" target="_blank" rel="noopener">שוק לה בוקריה</a>, עד <a href="https://www.google.com/maps/search/?api=1&query=Pla%C3%A7a%20de%20Catalunya%2C%20Barcelona" target="_blank" rel="noopener">כיכר קטלוניה (Plaça de Catalunya)</a>.</li>
+      <li><span class="time">~20:00</span> עולים ל<b>בונקרס דל כרמל</b> לשקיעה - הנוף הכי יפה על העיר (השקיעה באוגוסט בסביבות <b>20:25</b>).</li>
+      <li><span class="time">ערב</span> מזרקת מונז׳ואיק - <span class="warn">בדקו לוח זמנים</span> (בקיץ בד״כ ה׳–א׳). אם לא פועל: דינר + בילוי בגראסיה.</li>
     </ul>
-    <div class="shop">🛍️ <b>קניות — שני חלונות:</b> ב-<b>Passeig de Gràcia</b> בצהריים (מותגים ואופנה, ~12:30 במסלול), ורובע <b>El Born</b> אחה״צ (בוטיקים ועיצוב, בדרך לרובע הגותי). מזכרות ומעדנים בשוק <b>לה בוקריה</b>.</div>
+    <div class="shop">🛍️ <b>קניות - שני חלונות:</b> ב-<b>Passeig de Gràcia</b> בצהריים (מותגים ואופנה, ~12:30 במסלול), ורובע <b>El Born</b> אחה״צ (בוטיקים ועיצוב, בדרך לרובע הגותי). מזכרות ומעדנים בשוק <b>לה בוקריה</b>.</div>
   </div>
 
   <div class="day wip">
     <div class="day-head" id="d17"><div class="badge"><span class="d">17</span><span class="m">אוג׳ · ב׳</span></div>
       <div class="day-title">בוקר קליל ואז שדה <span class="wip-tag">🚧 בבנייה</span><small>טיסה 22:35</small></div></div>
     <ul>
-      <li><span class="time">בוקר</span> אזורי החינם של פארק גואל ותצפית, רכבל מונז׳ואיק, או חוף ברסלונטה. (האזור המונומנטלי בתשלום — אופציונלי.)</li>
+      <li><span class="time">בוקר</span> אזורי החינם של פארק גואל ותצפית, רכבל מונז׳ואיק, או חוף ברסלונטה. (האזור המונומנטלי בתשלום - אופציונלי.)</li>
       <li>צ׳ק־אאוט מאוחר / הפקדת מזוודות, צהריים אחרון.</li>
-      <li><span class="time">~19:30</span> יציאה לשדה (BCN ~30–40 דק׳). שוב תהליך <a href="https://travel-europe.europa.eu/ees" target="_blank" rel="noopener">EES</a> ביציאה — מרווח.</li>
+      <li><span class="time">~19:30</span> יציאה לשדה (BCN ~30–40 דק׳). שוב תהליך <a href="https://travel-europe.europa.eu/ees" target="_blank" rel="noopener">EES</a> ביציאה - מרווח.</li>
     </ul>
   </div>
 
@@ -465,15 +481,15 @@
     <ul>
       <li><b>אזור:</b> אישמפלה (Balmes / Diagonal).</li>
       <li><b>תאריכים:</b> צ׳ק־אין א׳ 16.8 (מ־15:00) · צ׳ק־אאוט ב׳ 17.8 (עד 12:00) · לילה 1 · ארוחת בוקר כלולה.</li>
-      <li><b>חדרים:</b> 2 חדרים — טריפל (3) + זוגי (2) = <b>5 אורחים</b> · ארוחת בוקר כלולה · ביטול חינם עד 13.8.</li>
+      <li><b>חדרים:</b> 2 חדרים - טריפל (3) + זוגי (2) = <b>5 אורחים</b> · ארוחת בוקר כלולה · ביטול חינם עד 13.8.</li>
       <li><b>מרחקים:</b> ~5 דק׳ הליכה ל־Passeig de Gràcia ולה פדררה · סגרדה פמיליה 2 תחנות מטרו (~10 דק׳ נסיעה) · פארק גואל ~2.2 ק״מ · ~15–20 דק׳ מטרמינל הקרוז · ~25–30 דק׳ משדה BCN (18 ק״מ) · באזור הקניות Balmes/Diagonal.</li>
     </ul>
-    <div class="rd" style="background:#EAF3EE;color:var(--ok)">✓ <b>תואם:</b> 5 אורחים · 2 חדרים · לילה אחד (16→17.8). זכרו: יורדים מהאונייה ב־06:00 אבל צ׳ק־אין רק מ־15:00 — להפקיד מזוודות בבוקר ולצאת לסיור.</div>
+    <div class="rd" style="background:#EAF3EE;color:var(--ok)">✓ <b>תואם:</b> 5 אורחים · 2 חדרים · לילה אחד (16→17.8). זכרו: יורדים מהאונייה ב־06:00 אבל צ׳ק־אין רק מ־15:00 - להפקיד מזוודות בבוקר ולצאת לסיור.</div>
   </div>
 
   <!-- TRANSFERS -->
   <div class="band"><span class="num">◆</span><h2>הסעות</h2></div>
-  <p class="note"><b>ליסבון (6.8, 9.8):</b> משתמשים ב־<b>Bolt</b> — מזמינים באפליקציה במקום, ללא הזמנה מראש. ל־7 נפשות + מזוודות לרוב צריך 2 רכבים (או Bolt XL). <b>ברצלונה (16.8, 17.8):</b> עדיף ואן/מיניבוס מוזמן מראש (רכב אחד, בלי לחלק לכמה מוניות).</p>
+  <p class="note"><b>ליסבון (6.8, 9.8):</b> משתמשים ב־<b>Bolt</b> - מזמינים באפליקציה במקום, ללא הזמנה מראש. ל־7 נפשות + מזוודות לרוב צריך 2 רכבים (או Bolt XL). <b>ברצלונה (16.8, 17.8):</b> עדיף ואן/מיניבוס מוזמן מראש (רכב אחד, בלי לחלק לכמה מוניות).</p>
   <div class="tablewrap">
   <table>
     <thead><tr><th>תאריך</th><th>קטע</th><th>נוסעים</th><th>רכב</th></tr></thead>
@@ -487,16 +503,16 @@
   </div>
   <div class="day">
     <ul>
-      <li><b>ליסבון:</b> השדה (LIS) ~15 דק׳ מהמרכז. נמל הקרוז במזרח (Santa Apolónia / Jardim do Tabaco) — קרוב לאלפמה, ~10–15 דק׳ מהמרכז.</li>
+      <li><b>ליסבון:</b> השדה (LIS) ~15 דק׳ מהמרכז. נמל הקרוז במזרח (Santa Apolónia / Jardim do Tabaco) - קרוב לאלפמה, ~10–15 דק׳ מהמרכז.</li>
       <li><b>ברצלונה:</b> נמל הקרוז (מסופי Adossat) דורש שאטל קצר עד שער הנמל; משם ~15–20 דק׳ למרכז. השדה (BCN) ~30–40 דק׳ מהמרכז.</li>
-      <li><b>איפה מזמינים:</b> <b>ליסבון — Bolt</b> באפליקציה במקום (ללא הזמנה מראש). <b>ברצלונה</b> — חברות הסעה פרטיות/שאטל, איסוף מראש (למשל Welcome Pickups ודומיהם) או דרך המלון; אפשר גם <b>Transfer רשמי של NCL</b> בין הנמל למלון/שדה.</li>
+      <li><b>איפה מזמינים:</b> <b>ליסבון - Bolt</b> באפליקציה במקום (ללא הזמנה מראש). <b>ברצלונה</b> - חברות הסעה פרטיות/שאטל, איסוף מראש (למשל Welcome Pickups ודומיהם) או דרך המלון; אפשר גם <b>Transfer רשמי של NCL</b> בין הנמל למלון/שדה.</li>
       <li>שווה לתת מראש את מספרי הטיסה ושעות ההגעה כדי שהנהג יעקוב אחרי עיכובים.</li>
     </ul>
   </div>
 
   <footer>
     בנוי לפי <a href="https://www.cleancruising.com.au/cruise/NCLDAW007_20260809" target="_blank" rel="noopener">הפלגת Norwegian Dawn · 9 באוגוסט 2026</a> (<a href="https://gangwaze.com/cruise-lines/norwegian-cruise-line/norwegian-dawn/2026-08-09/7-nights" target="_blank" rel="noopener">לו״ז מלא ב־Gangwaze</a>) · טיסות אל על (שעון מקומי).<br>
-    שעות ולוחות זמנים עשויים להשתנות — לאמת מול המפעילים לפני הזמנה.
+    שעות ולוחות זמנים עשויים להשתנות - לאמת מול המפעילים לפני הזמנה.
   </footer>
 
 </div>
