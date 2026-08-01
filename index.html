@@ -167,6 +167,12 @@
   .daynav-legend{display:flex;flex-wrap:wrap;gap:3px 14px;justify-content:center;padding:5px 10px 2px;font-size:11px;color:#CFE0EC;background:var(--sea)}
   .daynav-legend span{white-space:nowrap}
   .day-head{scroll-margin-top:72px}
+  .band{scroll-margin-top:72px}
+  /* צ׳יפ מקטע (עגינות / מסעדות / מלונות) */
+  .daychip.sec{background:rgba(240,200,120,.16);border-color:rgba(240,200,120,.42)}
+  .daychip.sec:hover{background:rgba(240,200,120,.30)}
+  .daychip.sec .dn{font-size:16px}
+  .daychip.sec .dd{opacity:1;font-weight:700}
   /* ימים בבנייה (טרם נסקרו) */
   .day.wip{border:2px dashed var(--gold);position:relative;overflow:hidden}
   .day.wip::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:0;background:repeating-linear-gradient(-45deg,rgba(176,129,58,.08) 0 11px,transparent 11px 22px)}
@@ -178,6 +184,8 @@
 
 <nav class="daynav" aria-label="ניווט בין ימי הטיול">
   <div class="daynav-track">
+    <a class="daychip sec" href="#ports"><span class="dn">⚓</span><span class="dd">עגינות</span></a>
+    <a class="daychip sec" href="#dining"><span class="dn">🍽️</span><span class="dd">מסעדות</span></a>
     <a class="daychip" href="#d6"><span class="dstat">✅</span><span class="dw">ה׳</span><span class="dn">6</span><span class="dd">🇵🇹 ליסבון</span></a>
     <a class="daychip" href="#d7"><span class="dstat">✅</span><span class="dw">ו׳</span><span class="dn">7</span><span class="dd">🇵🇹 ליסבון</span></a>
     <a class="daychip" href="#d8"><span class="dstat">✅</span><span class="dw">ש׳</span><span class="dn">8</span><span class="dd">🇵🇹 סינטרה</span></a>
@@ -190,6 +198,7 @@
     <a class="daychip" href="#d15"><span class="dstat">✅</span><span class="dw">ש׳</span><span class="dn">15</span><span class="dd">🇪🇸 פלמה</span></a>
     <a class="daychip" href="#d16"><span class="dstat">✅</span><span class="dw">א׳</span><span class="dn">16</span><span class="dd">🇪🇸 ברצלונה</span></a>
     <a class="daychip" href="#d17"><span class="dstat">✅</span><span class="dw">ב׳</span><span class="dn">17</span><span class="dd">🇪🇸 טיסה</span></a>
+    <a class="daychip sec" href="#hotels"><span class="dn">🏨</span><span class="dd">מלונות</span></a>
   </div>
 </nav>
 
@@ -234,7 +243,7 @@
   </figure>
 
   <!-- PORT TIMES -->
-  <div class="band"><span class="num">◆</span><h2>שעות הנמל וירידה מומלצת</h2></div>
+  <div class="band" id="ports"><span class="num">⚓</span><h2>שעות הנמל וירידה מומלצת</h2></div>
   <p class="note">״All Aboard״ הוא כ־30–60 דק׳ לפני ההפלגה - חושב פנימה בעמודת החזרה. לו״ז ההפלגה שלנו: <a href="https://www.cleancruising.com.au/cruise/NCLDAW007_20260809" target="_blank" rel="noopener">Norwegian Dawn · 9.8.2026</a> · <a href="https://gangwaze.com/cruise-lines/norwegian-cruise-line/norwegian-dawn/2026-08-09/7-nights" target="_blank" rel="noopener">מחירים ומזג אוויר (Gangwaze)</a>.</p>
   <p class="note" style="border-inline-start:3px solid var(--alert);padding-inline-start:10px">🕐 <b>הפרש שעה - שימו לב!</b> פורטוגל (ליסבון, פורטימאו) בשעון UTC+1, ספרד (מקאדיס והלאה) UTC+2. <b>בהפלגה מפורטוגל לספרד השעון מתקדם בשעה.</b> האונייה עוברת לשעון ספרד - סמכו על <b>השעון של האונייה</b> לזמני העלייה/הורדה, לא על הטלפון. כל השעות בטבלה הן בשעון המקומי של הנמל.</p>
   <div class="tablewrap">
@@ -253,7 +262,7 @@
   <p class="note"><b>שעות אוכל באונייה (Norwegian Dawn):</b> ארוחת בוקר במזנון Garden Café מ־07:00 (מוקדם אף יותר בימי נמל) - נוחתים ארוחת בוקר טובה לפני היציאה. ארוחת ערב: חדרי האוכל הראשיים 17:30–21:30, המזנון 17:00–21:30, והפאב O'Sheehan's פתוח <b>24 שעות</b> (רשת ביטחון לחזרות מאוחרות). בימים עם הפלגה מאוחרת (מוטריל, איביזה) עדיף לאכול בעיר.</p>
 
   <!-- ONBOARD DINING -->
-  <div class="band"><span class="num">◆</span><h2>מסעדות על הסיפון</h2></div>
+  <div class="band" id="dining"><span class="num">🍽️</span><h2>מסעדות על הסיפון</h2></div>
   <p class="note">NCL עובדת ב־<b>Freestyle</b> — בלי ישיבה קבועה. יש מסעדות <b>כלולות (חינם)</b> ומסעדות <b>בתשלום (דמי כיסוי + הזמנה מראש)</b>. הכלולות מספיקות לגמרי כדי לאכול טוב כל ערב; התשלום הוא תוספת, לא חובה.</p>
 
   <div class="rd" style="background:#EAF3EE;color:var(--ok)">✅ <b>כלול חינם, בלי הזמנה:</b> <b>Venetian</b> ו־<b>Aqua</b> (חדרי אוכל ראשיים) · <b>Garden Café</b> (מזנון) · <b>O'Sheehan's</b> (פאב 24 h) · <b>Bimini Grill</b> (גריל ליד הבריכה) · <b>Room Service</b> (ייתכן דמי משלוח).</div>
@@ -491,7 +500,7 @@
   </div>
 
   <!-- HOTELS -->
-  <div class="band"><span class="num">◆</span><h2>מלונות</h2></div>
+  <div class="band" id="hotels"><span class="num">🏨</span><h2>מלונות</h2></div>
 
   <div class="day">
     <div class="day-title">ליסבון · <a href="https://www.google.com/maps/search/?api=1&query=Inspira%20Liberdade%20Boutique%20Hotel%2C%20Lisbon" target="_blank" rel="noopener">Inspira Liberdade Boutique Hotel</a> <span class="tag" dir="ltr">6–9.8</span></div>
